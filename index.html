@@ -10,88 +10,99 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: a blurred full-bleed hero with stacked condensed type, then charcoal sections in grey and white, with Centric orange as the one accent. */
+/* Layout: off-white editorial sections alternating with charcoal, tall condensed headings, wide small caps,
+   rounded photos and taupe pills. Centric orange stays a small accent. */
 :root {
-  --bg: #161616;        /* charcoal page */
-  --panel: #202020;     /* raised panels */
-  --panel-2: #2a2a2a;
+  --paper: #f3f2ee;     /* off-white sections */
+  --ink: #15181b;       /* charcoal text and dark sections */
+  --panel: #202326;     /* raised panels on charcoal */
+  --panel-2: #2a2d30;
+  --taupe: #67645c;     /* buttons, grey heading lines (5.6:1 on paper) */
   --white: #f4f4f2;
-  --grey: #8d8d8a;      /* secondary text, 5.3:1 on --bg */
-  --ghost: #3a3a3a;     /* the big grey number and unread text */
-  --line: #333;
+  --grey: #8f8f8b;      /* secondary text on charcoal */
+  --grey-ink: #5d5b55;  /* secondary text on paper */
+  --line: #33363a;
   --orange: #ea5b0c;    /* Centric orange */
   --display: "Oswald", "Arial Narrow", sans-serif;
   --wide: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --gut: clamp(16px, 4vw, 56px);
 }
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--white); font: 400 15px/1.6 var(--wide); font-stretch: 100%; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.65 var(--wide); -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-/* Demo page: buttons and links look real but go nowhere */
+/* Concept page: buttons and links look real but go nowhere */
 a:not([href]) { cursor: pointer; }
-:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
-.wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--gut); }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gut); }
 .sec { padding: clamp(80px, 9vw, 130px) 0; }
-.label { margin: 0; color: var(--grey); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .08em; text-transform: uppercase; }
-.display { margin: 0; font-family: var(--display); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; }
+.dark { background: var(--ink); color: var(--white); }
+.eyebrow { margin: 0; font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .16em; text-transform: uppercase; }
+.display { margin: 0; font-family: var(--display); font-weight: 600; text-transform: uppercase; line-height: 1; letter-spacing: 0; }
 .h2 { font-size: clamp(34px, 4.2vw, 56px); text-wrap: balance; }
 .h2 .slash { color: var(--orange); font-weight: 400; }
 .small { margin: 0; color: var(--grey); font-size: 11px; font-stretch: 125%; letter-spacing: .04em; text-transform: uppercase; line-height: 1.5; }
+.pill { display: inline-flex; align-items: center; justify-content: center; padding: 18px 40px; border-radius: 99px; background: var(--taupe); color: var(--white); font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; transition: background-color .2s; }
+.pill:hover { background: var(--ink); }
+.dark .pill:hover { background: var(--orange); }
+.arrow-link { display: inline-flex; align-items: center; gap: 48px; padding-bottom: 10px; border-bottom: 1.5px solid currentColor; font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
+.arrow-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: translate .2s; }
+.arrow-link:hover svg { translate: 4px 0; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 0; border-radius: 4px; background: var(--white); color: var(--ink); font: inherit; font-size: 11px; font-weight: 700; font-stretch: 125%; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color .2s, color .2s; }
+.btn:hover { background: var(--orange); color: var(--white); }
 .bracket { display: inline-flex; gap: 14px; font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
 .bracket::before { content: "["; color: var(--orange); }
 .bracket::after { content: "]"; color: var(--orange); }
 .bracket:hover { color: var(--orange); }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 4px; background: var(--white); color: var(--bg); font-size: 11px; font-weight: 700; font-stretch: 125%; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background-color .2s, color .2s; }
-.btn:hover { background: var(--orange); color: var(--white); }
+
+/* ---------- Top bar ---------- */
+.top { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px var(--gut); background: var(--ink); color: var(--white); }
+.top__logo { width: 120px; }
+.top nav ul { display: flex; gap: clamp(20px, 3vw, 48px); margin: 0; padding: 0; list-style: none; }
+.top nav a { font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+.top nav a:hover { color: var(--orange); }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; min-height: min(100svh, 860px); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; padding: 22px var(--gut) 26px; }
-.hero__img { position: absolute; inset: -20px; width: calc(100% + 40px); height: calc(100% + 40px); object-fit: cover; object-position: 50% 30%; filter: grayscale(1) blur(5px) brightness(.62) contrast(1.1); }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(22 22 22 / .2) 0%, rgb(22 22 22 / 0) 40%, rgb(22 22 22 / .9) 100%); }
-.hero > :not(.hero__img) { position: relative; z-index: 1; }
-.top { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.top__logo { width: 118px; }
-.top nav ul { display: flex; align-items: center; margin: 0; padding: 0; list-style: none; }
-.top nav li + li::before { content: "|"; margin: 0 14px; color: var(--grey); }
-.top nav a { font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
-.top nav a:hover { color: var(--orange); }
-.top__right { display: flex; align-items: center; gap: 28px; }
-.hero__mid { align-self: center; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; padding: 40px 0; }
-.hero h1 { font-size: clamp(54px, 7.6vw, 108px); line-height: .88; }
-.hero h1 > span { display: block; }
-.hero h1 > span:nth-child(2) { padding-left: .9em; }
-.hero h1 .slash { color: var(--orange); font-weight: 400; }
-.hero__cta { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; margin-left: 1.1em; margin-top: 22px; }
-.hero__based { text-align: right; }
-.hero__base { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
-.hero__base .small { max-width: 26ch; color: rgb(244 244 242 / .75); }
+.hero { position: relative; display: grid; place-items: center; min-height: min(86svh, 820px); padding: 80px var(--gut); overflow: hidden; color: var(--white); text-align: center; }
+.hero__img { position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); object-fit: cover; object-position: 50% 30%; filter: grayscale(1) blur(7px) brightness(.72); }
+.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgb(21 24 27 / .1), rgb(21 24 27 / .5)); }
+.hero__in { position: relative; z-index: 1; display: grid; justify-items: center; gap: 22px; }
+.hero h1 { font-size: clamp(64px, 11vw, 156px); font-weight: 500; letter-spacing: .14em; margin-right: -.14em; line-height: .9; }
+.hero__sub { margin: 0; font-family: var(--display); font-size: clamp(18px, 1.8vw, 24px); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+.hero__sub span { color: var(--orange); }
+.hero__down { margin-top: 30px; width: 22px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; opacity: .85; }
 
 /* ---------- About ---------- */
-.about { display: grid; grid-template-columns: 1fr 1.25fr; gap: 32px; }
-.about__text { margin: 0; font-size: clamp(17px, 1.6vw, 21px); font-weight: 700; font-stretch: 115%; line-height: 1.3; text-transform: uppercase; letter-spacing: -.005em; }
-.about__text span { color: var(--ghost); }
-.bignum { position: relative; margin-top: clamp(64px, 8vw, 110px); text-align: center; }
-.bignum b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(64px, 11vw, 150px); line-height: .9; color: var(--ghost); letter-spacing: -.01em; }
-.bignum__caps { display: flex; justify-content: space-between; gap: 24px; margin-top: 14px; }
-.bignum__caps .small { max-width: 30ch; color: var(--white); }
-.bignum__caps .small:last-child { text-align: right; }
+.statement { margin: 26px auto 0; max-width: 18ch; text-align: center; font-size: clamp(40px, 5.6vw, 80px); line-height: .98; }
+.statement span { display: block; color: var(--taupe); font-family: var(--wide); font-weight: 600; font-stretch: 112%; font-size: .8em; letter-spacing: -.01em; }
+.about__eyebrow { text-align: center; }
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
+.about__img { border-radius: 14px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+.about__lead { margin: 0; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.22; letter-spacing: -.01em; }
+.about__body { margin: 30px 0 38px; max-width: 46ch; color: var(--grey-ink); font-size: 16px; }
 
-/* ---------- Workout breakdown ---------- */
+/* ---------- Class breakdown: charcoal copy beside a photo with a vertical label ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; }
+.split__copy { padding: clamp(70px, 8vw, 120px) clamp(24px, 6vw, 96px); }
+.split__copy h2 { font-size: clamp(40px, 4.6vw, 64px); line-height: .98; }
+.split__lead { margin: 28px 0 0; max-width: 34ch; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.4; }
+.split__body { margin: 20px 0 0; max-width: 46ch; color: var(--grey); font-size: 15px; }
+.phases { margin: 34px 0 40px; padding: 0; list-style: none; }
+.phases li { display: grid; grid-template-columns: 74px 1fr; gap: 18px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--line); }
+.phases li:last-child { border-bottom: 1px solid var(--line); }
+.phases b { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1; }
+.phases b small { display: block; margin-top: 4px; color: var(--grey); font-family: var(--wide); font-size: 10px; font-weight: 600; font-stretch: 125%; letter-spacing: .12em; }
+.phases span { color: var(--grey); font-size: 15px; line-height: 1.5; }
+.phases strong { color: var(--white); font-weight: 600; }
+.split__photo { position: relative; min-height: 520px; overflow: hidden; }
+.split__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.9); }
+.split__tag { position: absolute; top: 0; left: 0; z-index: 1; margin: 0; padding: 30px 0 0; writing-mode: vertical-rl; font-family: var(--display); font-size: clamp(64px, 8vw, 116px); font-weight: 600; line-height: .8; text-transform: uppercase; color: rgb(243 242 238 / .55); }
+
+/* ---------- Memberships (kept) ---------- */
 .head { display: flex; flex-wrap: wrap; align-items: end; gap: 18px 32px; }
 .head .small { max-width: 32ch; }
-.board { margin-top: 44px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
-.block { display: grid; grid-template-columns: 170px 1fr 56px; gap: 24px; align-items: center; padding: 30px clamp(18px, 3vw, 36px); }
-.block + .block { border-top: 1px solid var(--line); }
-.block__time { justify-self: start; padding: 8px 12px; border: 1px solid var(--grey); border-radius: 3px; font-family: var(--display); font-size: 17px; color: var(--grey); text-transform: uppercase; line-height: 1.15; }
-.block__time strong { display: block; color: var(--white); font-weight: 600; }
-.block ul { margin: 0; padding: 0; list-style: none; font-family: var(--display); font-weight: 400; font-size: clamp(18px, 2vw, 25px); line-height: 1.3; text-transform: uppercase; }
-.block ul b { font-weight: 700; margin-right: .3em; }
-.block__tag { justify-self: end; writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--display); font-size: 20px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); }
-.block__tag--quiet { color: var(--grey); }
-.board__note { margin: 16px 0 0; }
-
-/* ---------- Memberships ---------- */
 .plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 44px 0 0; padding: 0; list-style: none; }
 .plan { position: relative; display: flex; flex-direction: column; min-height: 340px; padding: 22px; border-radius: 6px; background: var(--panel); overflow: hidden; }
 .plan--feature { background: var(--panel-2); }
@@ -108,7 +119,7 @@ a:not([href]) { cursor: pointer; }
 .trial p { margin: 0; font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px); font-weight: 600; text-transform: uppercase; line-height: 1.1; }
 .trial p span { color: var(--orange); }
 
-/* ---------- Reviews: a row of Google-style cards that drifts sideways ---------- */
+/* ---------- Reviews (kept): Google-style cards drifting sideways ---------- */
 .reviews { margin-top: 44px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
 .reviews__track { display: flex; gap: 12px; width: max-content; padding: 0; margin: 0; list-style: none; animation: drift 60s linear infinite; }
 .reviews:hover .reviews__track, .reviews:focus-within .reviews__track { animation-play-state: paused; }
@@ -130,37 +141,38 @@ a:not([href]) { cursor: pointer; }
 }
 
 /* ---------- Contact ---------- */
-.contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(40px, 6vw, 96px); }
-.contact dl { display: grid; gap: 20px; margin: 36px 0 0; }
-.contact dd { margin: 4px 0 0; font-size: 16px; }
-.form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact__head { text-align: center; }
+.contact__head .statement { max-width: 20ch; }
+.contact { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 6vw, 90px); margin-top: clamp(50px, 6vw, 80px); }
+.contact dl { display: grid; gap: 22px; margin: 0; align-content: start; }
+.contact dt { color: var(--grey-ink); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; }
+.contact dd { margin: 4px 0 0; font-size: 17px; }
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { display: grid; gap: 6px; }
 .field--full { grid-column: 1 / -1; }
-.field label { color: var(--grey); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .08em; text-transform: uppercase; }
-.field input, .field select, .field textarea { width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--white); font: inherit; font-size: 16px; }
-.field textarea { min-height: 120px; resize: vertical; }
-.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--orange); outline-offset: 0; }
-.form .btn { justify-self: start; border: 0; cursor: pointer; padding: 14px 22px; }
-.form__status { grid-column: 1 / -1; margin: 0; min-height: 1.5em; color: var(--grey); font-size: 14px; }
-.foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 28px 0 40px; border-top: 1px solid var(--line); }
+.field label { color: var(--grey-ink); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; }
+.field input, .field select, .field textarea { width: 100%; padding: 14px 16px; border: 1px solid #d6d4cd; border-radius: 10px; background: #fff; color: var(--ink); font: inherit; font-size: 16px; }
+.field textarea { min-height: 130px; resize: vertical; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--taupe); outline-offset: 1px; }
+.form .pill { justify-self: start; border: 0; cursor: pointer; font-family: inherit; }
+.form__status { grid-column: 1 / -1; margin: 0; min-height: 1.5em; color: var(--grey-ink); font-size: 14px; }
+.foot { background: var(--taupe); color: var(--white); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 34px; padding-bottom: 34px; }
 .foot img { width: 120px; }
+.foot p { margin: 0; font-size: 11px; font-stretch: 125%; letter-spacing: .1em; text-transform: uppercase; }
 
 /* ---------- Tablet and phone ---------- */
 @media (max-width: 960px) {
   .top nav { display: none; }
-  .hero__mid { grid-template-columns: 1fr; }
-  .hero__based { text-align: left; }
-  .about, .contact { grid-template-columns: 1fr; }
+  .about, .split, .contact { grid-template-columns: 1fr; }
+  .split__photo { min-height: 420px; }
   .plans { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .hero { min-height: min(92svh, 760px); }
-  .hero h1 > span:nth-child(2) { padding-left: 0; }
-  .hero__cta { margin-left: 0; }
-  .bignum__caps { flex-direction: column; align-items: center; text-align: center; }
-  .bignum__caps .small:last-child { text-align: center; }
-  .block { grid-template-columns: 1fr; gap: 14px; }
-  .block__tag { order: -1; justify-self: start; writing-mode: horizontal-tb; transform: none; font-size: 16px; }
+  .hero { min-height: min(78svh, 640px); }
+  .hero h1 { letter-spacing: .08em; margin-right: -.08em; }
+  .about__img { aspect-ratio: 4 / 3; }
+  .phases li { grid-template-columns: 64px 1fr; }
   .plans { grid-template-columns: 1fr; }
   .plan { min-height: 260px; }
   .review { width: 290px; }
@@ -170,97 +182,65 @@ a:not([href]) { cursor: pointer; }
 </head>
 <body>
 
+<div class="top">
+  <img class="top__logo" src="img/logo-white.png" alt="Centric Fitness Club" width="1480" height="300">
+  <nav aria-label="Main">
+    <ul>
+      <li><a>About</a></li>
+      <li><a>Classes</a></li>
+      <li><a>Memberships</a></li>
+      <li><a>Reviews</a></li>
+      <li><a>Contact</a></li>
+    </ul>
+  </nav>
+  <a class="btn">Book a class</a>
+</div>
+
 <header class="hero">
   <img class="hero__img" src="img/hero.jpg" alt="" fetchpriority="high">
-  <div class="top">
-    <img class="top__logo" src="img/logo-white.png" alt="Centric Fitness Club" width="1480" height="300">
-    <div class="top__right">
-      <nav aria-label="Main">
-        <ul>
-          <li><a>About</a></li>
-          <li><a>Workouts</a></li>
-          <li><a>Memberships</a></li>
-          <li><a>Reviews</a></li>
-          <li><a>Contact</a></li>
-        </ul>
-      </nav>
-      <a class="btn">Book a class</a>
-    </div>
-  </div>
-  <div class="hero__mid">
-    <div>
-      <h1 class="display"><span>Centric</span><span>Fitness</span><span>Club <span class="slash">/</span></span></h1>
-      <div class="hero__cta"><a class="bracket">Try 7 days for $10</a></div>
-    </div>
-    <p class="small hero__based">Based in<br>Redondo Beach, CA</p>
-  </div>
-  <div class="hero__base">
-    <p class="small">Small group classes with a one-on-one feel. Find your center.</p>
-    <p class="small">© 2026</p>
+  <div class="hero__in">
+    <p class="eyebrow">Redondo Beach fitness club</p>
+    <h1 class="display">Centric</h1>
+    <p class="hero__sub">Small group classes <span>//</span> one-on-one feel</p>
+    <svg class="hero__down" viewBox="0 0 22 30" aria-hidden="true"><path d="M3 6l8 8 8-8M3 16l8 8 8-8"/></svg>
   </div>
 </header>
 
 <main>
   <section class="sec" aria-labelledby="about-h">
     <div class="wrap">
+      <p class="eyebrow about__eyebrow">Welcome to Centric</p>
+      <h2 class="display statement" id="about-h">Small group classes <span>with a</span> one-on-one feel</h2>
       <div class="about">
-        <h2 class="label" id="about-h">About us</h2>
-        <p class="about__text">Centric is small group classes with a one-on-one feel. Every session pairs strength and cardio, so you're challenged by lifts, tempos and movement while the people around you keep you going. <span>We program functional movement, hold a high standard on form, and train you to move better in daily life, from the core out. We believe you'll find your center by being here.</span></p>
-      </div>
-      <div class="bignum">
-        <b>40–50 MIN</b>
-        <div class="bignum__caps">
-          <p class="small">Full-body strength and cardio in every class,</p>
-          <p class="small">and you're in and out within an hour.</p>
+        <img class="about__img" src="img/small-group.jpg" alt="Three women training side by side on mats in a bright studio" loading="lazy">
+        <div>
+          <p class="about__lead">We believe you'll find your center by being here.</p>
+          <p class="about__body">Every class is coached in a small group, so you get the attention of personal training with the energy of people around you. We program functional movement, hold a high standard on form, and train you to move better in daily life, from the core out. Whether it's your first week or your fifth year, the coach knows your name and your numbers.</p>
+          <a class="pill">Try 7 days for $10</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="work-h" style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <h2 class="display h2" id="work-h">How a class breaks down <span class="slash">/</span></h2>
-        <p class="small">A real workout off our board. Strength first, then cardio, then a finisher for time.</p>
-      </div>
-      <div class="board">
-        <div class="block">
-          <p class="block__time"><strong>18 minutes</strong></p>
-          <ul>
-            <li><b>5</b>Elevated Jefferson curl</li>
-            <li><b>6 ea</b>Plank band hip flexor pull</li>
-            <li><b>6</b>Overhead press</li>
-            <li><b>:15 ea</b>DB split squat hold</li>
-            <li><b>6 ea</b>Ball hold dead bug</li>
-          </ul>
-          <span class="block__tag">Strength</span>
-        </div>
-        <div class="block">
-          <p class="block__time"><strong>14 minutes</strong></p>
-          <ul>
-            <li><b>10/10/30</b>Jump rope</li>
-            <li><b>6 ea</b>S/A S/L DB chest press</li>
-            <li><b>6 ea</b>Half-kneeling weighted rotations</li>
-            <li><b>6 ea</b>Ring plank S/L knee tuck</li>
-            <li><b>2</b>Box jump, max height</li>
-          </ul>
-          <span class="block__tag">Cardio</span>
-        </div>
-        <div class="block">
-          <p class="block__time"><strong>11 minute cap</strong>6 reps, 6 rounds for time</p>
-          <ul>
-            <li>Plate ground to overhead</li>
-            <li>Burpee to plate</li>
-            <li>Plate thruster</li>
-            <li>V-ups</li>
-          </ul>
-          <span class="block__tag block__tag--quiet">Finisher</span>
-        </div>
-      </div>
+  <section class="dark split" aria-labelledby="class-h">
+    <div class="split__copy">
+      <h2 class="display" id="class-h">How a class<br>breaks down</h2>
+      <p class="split__lead">Every session builds strength first, then raises your heart rate, then finishes for time.</p>
+      <p class="split__body">We lift while you're fresh, so your form stays clean and the weight can climb. Cardio comes next to keep your heart rate up while your muscles are already working, and a short finisher pushes the pace. Strength plus cardio is what makes it metabolic, and it's how we fit a full-body workout into under an hour.</p>
+      <ol class="phases">
+        <li><b>18<small>Min</small></b><span><strong>Strength.</strong> Controlled lifts and core work at a steady tempo.</span></li>
+        <li><b>14<small>Min</small></b><span><strong>Cardio.</strong> Jump rope, presses and plyometrics to lift the heart rate.</span></li>
+        <li><b>11<small>Min</small></b><span><strong>Finisher.</strong> A capped round for time to leave it all on the floor.</span></li>
+      </ol>
+      <a class="arrow-link">See the schedule <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+    </div>
+    <div class="split__photo">
+      <img src="img/trial.jpg" alt="An athlete gripping a loaded barbell before a lift" loading="lazy">
+      <p class="split__tag" aria-hidden="true">The work /</p>
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="plans-h" style="padding-top:0">
+  <section class="sec dark" aria-labelledby="plans-h">
     <div class="wrap">
       <div class="head">
         <h2 class="display h2" id="plans-h">Memberships <span class="slash">/</span></h2>
@@ -279,7 +259,7 @@ a:not([href]) { cursor: pointer; }
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="rev-h" style="padding-top:0">
+  <section class="sec dark" aria-labelledby="rev-h" style="padding-top:0">
     <div class="wrap">
       <div class="head">
         <h2 class="display h2" id="rev-h">What members say <span class="slash">/</span></h2>
@@ -291,18 +271,19 @@ a:not([href]) { cursor: pointer; }
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="contact-h" style="padding-top:0">
+  <section class="sec" aria-labelledby="contact-h">
     <div class="wrap">
+      <div class="contact__head">
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="display statement" id="contact-h">Ready to find <span>your center?</span> Come train with us</h2>
+      </div>
       <div class="contact">
-        <div>
-          <h2 class="display h2" id="contact-h">Come train with us <span class="slash">/</span></h2>
-          <dl>
-            <div><dt class="label">Visit</dt><dd>2806 #B Phelan Ln, Redondo Beach, CA 90278</dd></div>
-            <div><dt class="label">Call</dt><dd>(310) 504-4265</dd></div>
-            <div><dt class="label">Email</dt><dd>mail@centricfitnessclub.com</dd></div>
-            <div><dt class="label">Instagram</dt><dd>@centricfitnessclub</dd></div>
-          </dl>
-        </div>
+        <dl>
+          <div><dt>Visit</dt><dd>2806 #B Phelan Ln<br>Redondo Beach, CA 90278</dd></div>
+          <div><dt>Call</dt><dd>(310) 504-4265</dd></div>
+          <div><dt>Email</dt><dd>mail@centricfitnessclub.com</dd></div>
+          <div><dt>Instagram</dt><dd>@centricfitnessclub</dd></div>
+        </dl>
         <form class="form" novalidate>
           <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
           <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
@@ -310,17 +291,20 @@ a:not([href]) { cursor: pointer; }
           <div class="field field--full"><label for="f-plan">I'm interested in</label>
             <select id="f-plan" name="plan"><option>7 day trial ($10)</option><option>Drop in</option><option>Month-to-month unlimited</option><option>3-month unlimited</option><option>1-year unlimited</option><option>Personal training</option></select></div>
           <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
-          <button class="btn" type="submit">Send message</button>
+          <button class="pill" type="submit">Send message</button>
           <p class="form__status" role="status"></p>
         </form>
       </div>
-      <footer class="foot">
-        <img src="img/logo-white.png" alt="Centric Fitness Club" width="1480" height="300" loading="lazy">
-        <p class="small">© 2026 Centric Fitness Club · Concept by Sand City Designs</p>
-      </footer>
     </div>
   </section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="img/logo-white.png" alt="Centric Fitness Club" width="1480" height="300" loading="lazy">
+    <p>© 2026 Centric Fitness Club · Concept by Sand City Designs</p>
+  </div>
+</footer>
 
 <script>
 // Reviews: build the cards, then a hidden second copy so the row loops without a gap
@@ -337,7 +321,7 @@ const card = ([name, when, text]) => `<div class="review__top"><span class="revi
 const track = document.querySelector('[data-reviews]');
 track.innerHTML = REVIEWS.map(r => `<li class="review">${card(r)}</li>`).join('') + REVIEWS.map(r => `<li class="review" aria-hidden="true">${card(r)}</li>`).join('');
 
-// Demo form: nothing is sent
+// Concept form: nothing is sent
 const form = document.querySelector('.form'), status = document.querySelector('.form__status');
 form.addEventListener('submit', e => {
   e.preventDefault();
