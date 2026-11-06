@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Centric Fitness Club | Small group training in Redondo Beach</title>
+<meta name="description" content="Small group strength and cardio classes with a one-on-one feel in Redondo Beach, CA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: a framed photo hero with a floating white bar, then four plain black sections. Black and white like the brand, orange only for the trial offer. */
+:root {
+  --black: #000;
+  --panel: #141414;     /* raised surfaces on black */
+  --white: #fff;
+  --soft: #b3b3b3;      /* secondary text, 9.6:1 on black */
+  --line: #2a2a2a;
+  --orange: #ea5b0c;    /* Centric's trial orange */
+  --font: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --gut: clamp(16px, 4vw, 64px);
+  --r: 22px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--white); font: 400 16px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+/* Demo page: buttons and links look real but go nowhere */
+a:not([href]) { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--gut); }
+.sec { padding: clamp(80px, 10vw, 140px) 0; }
+h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; text-wrap: balance; }
+.h2 { font-size: clamp(36px, 5vw, 68px); text-transform: uppercase; }
+.lead { margin: 0; max-width: 46ch; color: var(--soft); font-size: 17px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 24px; border: 1.5px solid currentColor; border-radius: 8px; font-size: 14px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; transition: background-color .2s, color .2s, border-color .2s; white-space: nowrap; }
+.btn--orange { background: var(--orange); border-color: var(--orange); color: var(--white); }
+.btn--orange:hover { background: #c94c08; border-color: #c94c08; }
+.btn--ghost:hover { background: var(--white); color: var(--black); }
+.btn--white { background: var(--white); border-color: var(--white); color: var(--black); }
+.btn--white:hover { background: transparent; color: var(--white); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; margin: 12px; min-height: min(92svh, 860px); border-radius: var(--r); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; }
+.hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.05); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / .35) 0%, rgb(0 0 0 / .1) 35%, rgb(0 0 0 / .75) 100%); }
+.hero > :not(.hero__img) { position: relative; z-index: 1; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 20px clamp(16px, 3vw, 40px) 0; padding: 12px 12px 12px 22px; border-radius: 12px; background: var(--white); color: var(--black); }
+.bar__logo { width: 150px; }
+.bar nav ul { display: flex; gap: clamp(18px, 2.4vw, 36px); margin: 0; padding: 0; list-style: none; }
+.bar nav a { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.bar nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.bar .btn { padding: 11px 18px; background: var(--black); border-color: var(--black); color: var(--white); }
+.bar .btn:hover { background: var(--orange); border-color: var(--orange); }
+.hero__intro { justify-self: end; max-width: 460px; margin: clamp(28px, 4vw, 48px) clamp(16px, 3vw, 40px) 0; }
+.hero__intro p { margin: 0 0 20px; font-size: 15px; color: rgb(255 255 255 / .9); }
+.hero__intro .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero h1 { align-self: end; margin: 0 clamp(16px, 3vw, 40px) clamp(28px, 4vw, 48px); font-size: clamp(44px, 7.4vw, 112px); text-transform: uppercase; line-height: .95; }
+.hero h1 span { display: block; color: transparent; -webkit-text-stroke: 1.5px var(--white); }
+
+/* ---------- About ---------- */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px clamp(32px, 6vw, 96px); align-items: end; }
+.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin: clamp(56px, 7vw, 96px) 0 0; padding: 0; list-style: none; }
+.feats li { padding-top: 24px; border-top: 1px solid var(--line); }
+.feats b { display: block; font-size: clamp(20px, 2vw, 26px); font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.15; }
+.feats span { display: block; margin-top: 10px; color: var(--soft); font-size: 15px; }
+
+/* ---------- Training ---------- */
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 48px 0 0; padding: 0; list-style: none; }
+.card { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 5; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .5s, scale .6s; }
+.card:hover img { filter: grayscale(0); scale: 1.03; }
+.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / 0) 40%, rgb(0 0 0 / .85) 100%); }
+.card__tag { position: absolute; z-index: 1; top: 16px; left: 16px; padding: 6px 12px; border-radius: 6px; background: var(--white); color: var(--black); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.card__body { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 22px; }
+.card h3 { font-size: 24px; text-transform: uppercase; }
+.card p { margin: 8px 0 0; color: rgb(255 255 255 / .85); font-size: 15px; line-height: 1.5; }
+@media (prefers-reduced-motion: reduce) { .card img { transition: none; } .card:hover img { scale: 1; } }
+
+/* ---------- Core values ---------- */
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 48px 0 0; padding: 0; list-style: none; }
+.values li { padding: 32px 28px 36px; border-radius: var(--r); background: var(--panel); }
+.values i { display: block; margin-bottom: 40px; color: var(--orange); font: 600 22px/1 var(--font); font-style: normal; letter-spacing: .1em; }
+.values b { display: block; font-size: 22px; font-weight: 700; text-transform: uppercase; line-height: 1.15; }
+.values span { display: block; margin-top: 10px; color: var(--soft); font-size: 15px; }
+
+/* ---------- Trial + footer ---------- */
+.trial { position: relative; margin: 0 12px; border-radius: var(--r); overflow: hidden; text-align: center; padding: clamp(90px, 11vw, 150px) var(--gut); }
+.trial > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+.trial::after { content: ""; position: absolute; inset: 0; background: rgb(0 0 0 / .62); }
+.trial > :not(img) { position: relative; z-index: 1; }
+.trial__eyebrow { margin: 0; color: var(--orange); font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.trial h2 { margin: 16px 0 18px; font-size: clamp(52px, 9vw, 132px); text-transform: uppercase; line-height: .92; }
+.trial p { margin: 0 auto 32px; max-width: 44ch; color: rgb(255 255 255 / .88); }
+.foot { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 32px; padding: 64px 0 40px; }
+.foot__logo { width: 180px; filter: invert(1); mix-blend-mode: screen; }
+.foot dt { color: var(--soft); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.foot dd { margin: 6px 0 0; font-size: 15px; }
+.foot__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--soft); font-size: 13px; }
+
+/* ---------- Tablet and phone ---------- */
+@media (max-width: 960px) {
+  .bar nav { display: none; }
+  .about { grid-template-columns: 1fr; }
+  .cards, .values { grid-template-columns: 1fr 1fr; }
+  .cards li:last-child, .values li:last-child { grid-column: 1 / -1; }
+  .cards li:last-child .card { aspect-ratio: 16 / 9; }
+  .foot { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero { margin: 8px; min-height: min(88svh, 760px); }
+  .bar { padding: 10px 10px 10px 16px; }
+  .bar__logo { width: 120px; }
+  .bar .btn { padding: 10px 14px; font-size: 12px; }
+  .hero__intro { justify-self: start; }
+  .feats, .cards, .values { grid-template-columns: 1fr; }
+  .cards li:last-child .card { aspect-ratio: 4 / 5; }
+  .trial { margin: 0 8px; }
+  .foot { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="hero__img" src="img/hero.jpg" alt="A woman pressing a loaded barbell overhead in a squat rack" fetchpriority="high">
+  <div class="bar">
+    <img class="bar__logo" src="img/logo.png" alt="Centric Fitness Club" width="1480" height="300">
+    <nav aria-label="Main">
+      <ul>
+        <li><a>Schedule</a></li>
+        <li><a>Memberships</a></li>
+        <li><a>Training</a></li>
+        <li><a>The Team</a></li>
+      </ul>
+    </nav>
+    <a class="btn">Book a class</a>
+  </div>
+  <div class="hero__intro">
+    <p>40 to 50 minute full-body workouts that mix strength and cardio, coached in small groups in Redondo Beach. In and out within an hour.</p>
+    <div class="btns">
+      <a class="btn btn--orange">Try 7 days for $10</a>
+      <a class="btn btn--ghost">View schedule</a>
+    </div>
+  </div>
+  <h1>Small group classes. <span>One-on-one feel.</span></h1>
+</header>
+
+<main>
+  <section class="sec" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about">
+        <h2 class="h2" id="about-h">Find your center.</h2>
+        <p class="lead">Every class follows a structure of strength and cardio training, so you're challenged with a mix of lifts, tempos and movements while the people around you keep you going. We program functional movement, hold a high standard on form, and train you to move better in daily life, from the core out.</p>
+      </div>
+      <ul class="feats">
+        <li><b>Full body every day</b><span>Strength, cardio, plyometric and mobility work in every session.</span></li>
+        <li><b>In and out within an hour</b><span>A functional warm-up, then a 40 to 50 minute workout.</span></li>
+        <li><b>Strength + cardio = metabolic</b><span>Training that keeps working long after you leave.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="train-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="h2" id="train-h">How we train</h2>
+        <a class="btn btn--ghost">See the schedule</a>
+      </div>
+      <ul class="cards">
+        <li><div class="card"><img src="img/strength.jpg" alt="A woman with a barbell across her shoulders" loading="lazy"><span class="card__tag">Strength</span><div class="card__body"><h3>Lift with purpose</h3><p>Barbells, dumbbells and kettlebells, coached rep by rep.</p></div></div></li>
+        <li><div class="card"><img src="img/conditioning.jpg" alt="An athlete working battle ropes in an open gym" loading="lazy"><span class="card__tag">Cardio</span><div class="card__body"><h3>Build your engine</h3><p>Intervals and conditioning that push your heart rate and recovery.</p></div></div></li>
+        <li><div class="card"><img src="img/small-group.jpg" alt="Three women training together on mats in a bright studio" loading="lazy"><span class="card__tag">Small group</span><div class="card__body"><h3>Never train alone</h3><p>A small crew and a coach who knows your name and your form.</p></div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="values-h" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2" id="values-h">Our core values</h2>
+      <ul class="values">
+        <li><i aria-hidden="true">I</i><b>Form and safety first</b><span>Good movement before heavy weight, every single rep.</span></li>
+        <li><i aria-hidden="true">II</i><b>Surround yourself</b><span>The people next to you are the reason you show up.</span></li>
+        <li><i aria-hidden="true">III</i><b>Leave better than you came</b><span>Stronger, clearer and more centered than when you walked in.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="trial" aria-labelledby="trial-h">
+    <img src="img/trial.jpg" alt="" loading="lazy">
+    <p class="trial__eyebrow">First time trial</p>
+    <h2 id="trial-h">7 days for $10</h2>
+    <p>Come try a full week of classes and see why our members call Centric their center.</p>
+    <a class="btn btn--orange">Start your trial</a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <img class="foot__logo" src="img/logo.png" alt="Centric Fitness Club" width="1480" height="300" loading="lazy">
+    <dl><dt>Visit</dt><dd>2806 #B Phelan Ln<br>Redondo Beach, CA 90278</dd></dl>
+    <dl><dt>Contact</dt><dd>(310) 504-4265<br>mail@centricfitnessclub.com</dd></dl>
+    <dl><dt>Follow</dt><dd>@centricfitnessclub</dd></dl>
+  </div>
+  <div class="foot__base"><span>© 2026 Centric Fitness Club</span><span>Concept design by Sand City Designs</span></div>
+</footer>
+
+</body>
+</html>
