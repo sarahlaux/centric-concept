@@ -155,7 +155,7 @@ a:not([href]) { cursor: pointer; }
 .contact__head { text-align: center; }
 .contact__head .statement { max-width: 20ch; }
 .statement .ln { display: block; color: inherit; font: inherit; letter-spacing: inherit; }
-/* Contact heading: the label and each line fade up in turn when the section scrolls into view (script adds .is-armed) */
+/* Contact heading and class phases: each item fades up in turn when the section scrolls into view (script adds .is-armed) */
 [data-fade].is-armed .fx { opacity: 0; translate: 0 18px; transition: opacity 1s ease, translate 1s ease; transition-delay: calc(var(--i) * .3s); }
 [data-fade].is-armed.is-in .fx { opacity: 1; translate: 0 0; }
 .contact { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 6vw, 90px); margin-top: clamp(50px, 6vw, 80px); }
@@ -245,10 +245,10 @@ a:not([href]) { cursor: pointer; }
       <h2 class="display" id="class-h">How a class<br>breaks down</h2>
       <p class="split__lead">Every session builds strength first, then raises your heart rate, then finishes for time.</p>
       <p class="split__body">We lift while you're fresh, so your form stays clean and the weight can climb. Cardio comes next to keep your heart rate up while your muscles are already working, and a short finisher pushes the pace. Strength plus cardio is what makes it metabolic, and it's how we fit a full-body workout into under an hour.</p>
-      <ol class="phases">
-        <li><b>18<small>Min</small></b><span><strong>Strength.</strong> Controlled lifts and core work at a steady tempo.</span></li>
-        <li><b>14<small>Min</small></b><span><strong>Cardio.</strong> Jump rope, presses and plyometrics to lift the heart rate.</span></li>
-        <li><b>11<small>Min</small></b><span><strong>Finisher.</strong> A capped round for time to leave it all on the floor.</span></li>
+      <ol class="phases" data-fade>
+        <li class="fx"><b>18<small>Min</small></b><span><strong>Strength.</strong> Controlled lifts and core work at a steady tempo.</span></li>
+        <li class="fx"><b>14<small>Min</small></b><span><strong>Cardio.</strong> Jump rope, presses and plyometrics to lift the heart rate.</span></li>
+        <li class="fx"><b>11<small>Min</small></b><span><strong>Finisher.</strong> A capped round for time to leave it all on the floor.</span></li>
       </ol>
       <a class="arrow-link">See the schedule <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
     </div>
