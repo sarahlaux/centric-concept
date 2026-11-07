@@ -112,7 +112,13 @@ a:not([href]) { cursor: pointer; }
 .plan { position: relative; display: flex; flex-direction: column; min-height: 340px; padding: 22px; border-radius: 6px; background: var(--panel); overflow: hidden; }
 .plan--feature { background: var(--panel-2); }
 .plan--feature > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.35); }
-.plan > :not(img) { position: relative; }
+.plan > :not(img) { position: relative; z-index: 2; }
+/* Spotlight: a soft white light and a bright edge follow the pointer across the cards (script sets --mx/--my per card) */
+.plan::before, .plan::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s; }
+.plan::after { background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .13), transparent 70%); }
+.plan::before { padding: 1.5px; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .95), rgb(255 255 255 / .15) 45%, transparent 75%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+.plans.is-lit .plan::before, .plans.is-lit .plan::after { opacity: 1; }
+.plan { border: 1px solid rgb(255 255 255 / .06); }
 .plan__num { font-family: var(--display); font-size: 15px; color: var(--grey); }
 .plan h3 { margin: 8px 0 0; font-family: var(--display); font-size: 26px; font-weight: 700; text-transform: uppercase; line-height: 1; }
 .plan__price { margin: auto 0 4px; font-family: var(--display); font-size: clamp(44px, 4vw, 56px); font-weight: 700; line-height: 1; }
@@ -362,6 +368,19 @@ if (st && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   addEventListener('scroll', () => { if (!busy) { busy = true; requestAnimationFrame(paint); } }, { passive: true });
   addEventListener('resize', paint);
   paint();
+}
+
+// Membership cards: the spotlight follows the pointer across all four cards, like light moving over them
+const plans = document.querySelector('.plans');
+if (plans && matchMedia('(hover: hover)').matches) {
+  const cards = [...plans.querySelectorAll('.plan')];
+  let frame = 0, px = 0, py = 0;
+  const light = () => {
+    frame = 0;
+    cards.forEach(c => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', `${px - r.left}px`); c.style.setProperty('--my', `${py - r.top}px`); });
+  };
+  plans.addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; plans.classList.add('is-lit'); if (!frame) frame = requestAnimationFrame(light); });
+  plans.addEventListener('pointerleave', () => plans.classList.remove('is-lit'));
 }
 
 // Concept form: nothing is sent
