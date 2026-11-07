@@ -158,6 +158,8 @@ a:not([href]) { cursor: pointer; }
 /* Contact heading and class phases: each item fades up in turn when the section scrolls into view (script adds .is-armed) */
 [data-fade].is-armed .fx { opacity: 0; translate: 0 18px; transition: opacity 1s ease, translate 1s ease; transition-delay: calc(var(--i) * .3s); }
 [data-fade].is-armed.is-in .fx { opacity: 1; translate: 0 0; }
+[data-fade="x"].is-armed .fx { translate: -28px 0; }
+[data-fade="x"].is-armed.is-in .fx { translate: 0 0; }
 .contact { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 6vw, 90px); margin-top: clamp(50px, 6vw, 80px); }
 .contact dl { display: grid; gap: 22px; margin: 0; align-content: start; }
 .contact dt { color: var(--grey-ink); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; }
@@ -264,11 +266,11 @@ a:not([href]) { cursor: pointer; }
         <h2 class="display h2" id="plans-h">Memberships <span class="slash">/</span></h2>
         <p class="small">Unlimited classes on every plan. Pick the commitment that fits.</p>
       </div>
-      <ul class="plans">
-        <li class="plan"><span class="plan__num">01.</span><h3>Drop in</h3><p class="plan__price">$30</p><p class="small plan__note">Just visiting? One session.</p><a class="btn">Book a class</a></li>
-        <li class="plan plan--feature"><img src="img/strength.jpg" alt="" loading="lazy"><span class="plan__flag">Most popular</span><span class="plan__num">02.</span><h3>Month-to-month</h3><p class="plan__price">$199<small>/mo</small></p><p class="small plan__note">Unlimited classes. No commitment.</p><a class="btn">Join now</a></li>
-        <li class="plan"><span class="plan__num">03.</span><h3>3-month unlimited</h3><p class="plan__price">$560</p><p class="small plan__note">Big savings. Renews every 3 months.</p><a class="btn">Join now</a></li>
-        <li class="plan"><span class="plan__num">04.</span><h3>1-year unlimited</h3><p class="plan__price">$2,150</p><p class="small plan__note">Biggest savings. One-time payment.</p><a class="btn">Join now</a></li>
+      <ul class="plans" data-fade="x">
+        <li class="plan fx"><span class="plan__num">01.</span><h3>Drop in</h3><p class="plan__price">$30</p><p class="small plan__note">Just visiting? One session.</p><a class="btn">Book a class</a></li>
+        <li class="plan plan--feature fx"><img src="img/strength.jpg" alt="" loading="lazy"><span class="plan__flag">Most popular</span><span class="plan__num">02.</span><h3>Month-to-month</h3><p class="plan__price">$199<small>/mo</small></p><p class="small plan__note">Unlimited classes. No commitment.</p><a class="btn">Join now</a></li>
+        <li class="plan fx"><span class="plan__num">03.</span><h3>3-month unlimited</h3><p class="plan__price">$560</p><p class="small plan__note">Big savings. Renews every 3 months.</p><a class="btn">Join now</a></li>
+        <li class="plan fx"><span class="plan__num">04.</span><h3>1-year unlimited</h3><p class="plan__price">$2,150</p><p class="small plan__note">Biggest savings. One-time payment.</p><a class="btn">Join now</a></li>
       </ul>
       <div class="trial">
         <p>First time? <span>7 days for $10.</span></p>
