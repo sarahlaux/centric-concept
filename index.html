@@ -154,6 +154,10 @@ a:not([href]) { cursor: pointer; }
 /* ---------- Contact ---------- */
 .contact__head { text-align: center; }
 .contact__head .statement { max-width: 20ch; }
+.statement .ln { display: block; color: inherit; font: inherit; letter-spacing: inherit; }
+/* Contact heading: the label and each line fade up in turn when the section scrolls into view (script adds .is-armed) */
+[data-fade].is-armed .fx { opacity: 0; translate: 0 18px; transition: opacity 1s ease, translate 1s ease; transition-delay: calc(var(--i) * .3s); }
+[data-fade].is-armed.is-in .fx { opacity: 1; translate: 0 0; }
 .contact { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 6vw, 90px); margin-top: clamp(50px, 6vw, 80px); }
 .contact dl { display: grid; gap: 22px; margin: 0; align-content: start; }
 .contact dt { color: var(--grey-ink); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; }
@@ -287,9 +291,9 @@ a:not([href]) { cursor: pointer; }
 
   <section class="sec" aria-labelledby="contact-h">
     <div class="wrap">
-      <div class="contact__head">
-        <p class="eyebrow">Get in touch</p>
-        <h2 class="display statement" id="contact-h">Ready to find <span>your center?</span> Come train with us</h2>
+      <div class="contact__head" data-fade>
+        <p class="eyebrow fx">Get in touch</p>
+        <h2 class="display statement" id="contact-h"><span class="ln fx">Ready to find</span> <span class="fx">your center?</span> <span class="ln fx">Come train with us</span></h2>
       </div>
       <div class="contact">
         <dl>
@@ -381,6 +385,15 @@ if (plans && matchMedia('(hover: hover)').matches) {
   plans.addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; plans.classList.add('is-lit'); if (!frame) frame = requestAnimationFrame(light); });
   plans.addEventListener('pointerleave', () => plans.classList.remove('is-lit'));
 }
+
+// Contact heading fade-in
+document.querySelectorAll('[data-fade]').forEach(box => {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  box.querySelectorAll('.fx').forEach((el, i) => el.style.setProperty('--i', i));
+  box.classList.add('is-armed');
+  const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { box.classList.add('is-in'); io.disconnect(); } }, { threshold: .35 });
+  io.observe(box);
+});
 
 // Concept form: nothing is sent
 const form = document.querySelector('.form'), status = document.querySelector('.form__status');
