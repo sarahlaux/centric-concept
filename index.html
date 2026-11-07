@@ -78,10 +78,15 @@ a:not([href]) { cursor: pointer; }
 .statement { margin: 26px auto 0; max-width: 18ch; text-align: center; font-size: clamp(40px, 5.6vw, 80px); line-height: .98; }
 .statement span { display: block; color: var(--taupe); font-family: var(--wide); font-weight: 600; font-stretch: 112%; font-size: .8em; letter-spacing: -.01em; }
 .about__eyebrow { text-align: center; }
-.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
-.about__img { border-radius: 14px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
-.about__lead { margin: 0; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.22; letter-spacing: -.01em; }
-.about__body { margin: 30px 0 38px; max-width: 46ch; color: var(--grey-ink); font-size: 16px; }
+.about { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-top: clamp(64px, 8vw, 120px); }
+.dot { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 15px; font-weight: 500; }
+.dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.about__statement { margin: 0; font-size: clamp(26px, 3.1vw, 44px); font-weight: 500; line-height: 1.16; letter-spacing: -.02em; }
+.about__statement.is-live .w { color: #b9b6ae; transition: color .25s; }
+.about__statement.is-live .w.on { color: var(--ink); }
+.about__more { grid-column: 2; display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; margin-top: 28px; }
+.about__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
+.about__more p { margin: 0 0 26px; max-width: 46ch; color: var(--grey-ink); font-size: 16px; }
 
 /* ---------- Class breakdown: charcoal copy beside a photo with a vertical label ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; }
@@ -165,13 +170,14 @@ a:not([href]) { cursor: pointer; }
 @media (max-width: 960px) {
   .top nav { display: none; }
   .about, .split, .contact { grid-template-columns: 1fr; }
+  .about__more { grid-column: 1; }
   .split__photo { min-height: 420px; }
   .plans { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
   .hero { min-height: calc(100svh - 66px); }
   .hero h1 { letter-spacing: .08em; margin-right: -.08em; }
-  .about__img { aspect-ratio: 4 / 3; }
+  .about__more { grid-template-columns: 1fr; }
   .phases li { grid-template-columns: 64px 1fr; }
   .plans { grid-template-columns: 1fr; }
   .plan { min-height: 260px; }
@@ -212,11 +218,14 @@ a:not([href]) { cursor: pointer; }
       <p class="eyebrow about__eyebrow">Welcome to Centric</p>
       <h2 class="display statement" id="about-h">Small group classes <span>with a</span> one-on-one feel</h2>
       <div class="about">
-        <img class="about__img" src="img/about.jpg" alt="A woman with wrapped hands catching her breath beside a barbell rack" loading="lazy" style="object-position:50% 35%">
-        <div>
-          <p class="about__lead">We believe you'll find your center by being here.</p>
-          <p class="about__body">Every class is coached in a small group, so you get the attention of personal training with the energy of people around you. We program functional movement, hold a high standard on form, and train you to move better in daily life, from the core out. Whether it's your first week or your fifth year, the coach knows your name and your numbers.</p>
-          <a class="pill">Try 7 days for $10</a>
+        <p class="dot">Our approach</p>
+        <p class="about__statement" data-statement>Centric is a Redondo Beach gym built around small groups. Every class is coached by someone who knows your name, your numbers and your form, and the people training beside you are the reason you keep coming back.</p>
+        <div class="about__more">
+          <img class="about__img" src="img/about.jpg" alt="A woman with wrapped hands catching her breath beside a barbell rack" loading="lazy" style="object-position:50% 30%">
+          <div>
+            <p>We program functional movement, hold a high standard on form, and train you to move better in daily life, from the core out. Whether it's your first week or your fifth year, you'll leave better than you came.</p>
+            <a class="pill">Try 7 days for $10</a>
+          </div>
         </div>
       </div>
     </div>
@@ -334,6 +343,25 @@ if (heroImg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
   move();
+}
+
+// About statement: words darken as it scrolls up the screen
+const st = document.querySelector('[data-statement]');
+if (st && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  st.innerHTML = st.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
+  const words = [...st.querySelectorAll('.w')];
+  st.classList.add('is-live');
+  let busy = false;
+  const paint = () => {
+    busy = false;
+    const r = st.getBoundingClientRect(), vh = innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * .85 - r.top) / (r.height + vh * .4)));
+    const n = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < n));
+  };
+  addEventListener('scroll', () => { if (!busy) { busy = true; requestAnimationFrame(paint); } }, { passive: true });
+  addEventListener('resize', paint);
+  paint();
 }
 
 // Concept form: nothing is sent
