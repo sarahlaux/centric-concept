@@ -72,7 +72,7 @@ a:not([href]) { cursor: pointer; }
 .hero h1 { font-size: clamp(64px, 11vw, 156px); font-weight: 500; letter-spacing: .14em; margin-right: -.14em; line-height: .9; }
 /* On load a cool grey band sweeps through the letters from left to right, then they settle back to white */
 @supports (-webkit-background-clip: text) or (background-clip: text) {
-  .hero h1 { background: linear-gradient(100deg, var(--white) 0 38%, #9a9da1 46%, #6f7377 50%, #9a9da1 54%, var(--white) 62% 100%); background-size: 300% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: letter-wave 2.6s cubic-bezier(.45, 0, .2, 1) .6s both; }
+  .hero h1 { background: linear-gradient(100deg, var(--white) 0 34%, #8d9094 42%, #4e5256 50%, #8d9094 58%, var(--white) 66% 100%); background-size: 300% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: letter-wave 4.5s cubic-bezier(.45, 0, .25, 1) .6s both; }
   @keyframes letter-wave { from { background-position: 100% 0; } to { background-position: 0% 0; } }
 }
 @media (prefers-reduced-motion: reduce) { .hero h1 { animation: none; } }
