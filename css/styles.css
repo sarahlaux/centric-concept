@@ -459,7 +459,8 @@ body.menu-open .mobile-bar { display: none; }
 
 @media (max-width: 720px) {
   :root { --header-h: 64px; }
-  body { font-size: 16px; padding-bottom: 76px; }
+  body { font-size: 16px; }
+  .hero__trust { display: none; }
   .header__logo img { height: 20px; }
 
   .hero { padding-inline: 10px; }
@@ -497,13 +498,6 @@ body.menu-open .mobile-bar { display: none; }
   .footer__cta .btn { width: 100%; }
   .footer__grid { grid-template-columns: 1fr; gap: 28px; }
 
-  .mobile-bar {
-    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
-    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(17,17,17,.94); border-top: 1px solid var(--line-dark);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  }
-  .mobile-bar .btn { min-height: 52px; font-size: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
