@@ -291,7 +291,7 @@ body.menu-open .mobile-bar { display: none; }
 .gallery__track {
   --slide-w: min(560px, 82vw);
   display: flex; gap: 14px; width: max-content;
-  animation: gallery-slide 48s linear infinite;
+  animation: gallery-slide 84s linear infinite;
 }
 .gallery:hover .gallery__track,
 .gallery:focus-within .gallery__track,
