@@ -325,7 +325,7 @@
         </div>
       </div>
 
-      <ul class="reviews">
+      <ul class="reviews" data-reviews>
         <li class="review reveal">
           <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
           <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
@@ -363,6 +363,11 @@
           <p class="review__by">Romit G.</p>
         </li>
       </ul>
+      <div class="rev-nav" aria-label="Browse reviews">
+        <button class="rev-nav__btn" type="button" data-rev-prev aria-label="Previous reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <p class="rev-nav__count" data-rev-count aria-live="polite"></p>
+        <button class="rev-nav__btn" type="button" data-rev-next aria-label="Next reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
       <p class="fineprint">Excerpts from Centric Fitness Club’s Google reviews.</p>
     </div>
   </section>

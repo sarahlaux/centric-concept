@@ -88,3 +88,26 @@ document.querySelectorAll('.faq details').forEach((d) => {
     anim.onfinish = () => { if (!opening) d.open = false; anim = null; };
   });
 });
+
+// Reviews: arrow buttons for the phone slider (two cards at a time)
+const revList = document.querySelector('[data-reviews]');
+if (revList) {
+  const prev = document.querySelector('[data-rev-prev]');
+  const next = document.querySelector('[data-rev-next]');
+  const count = document.querySelector('[data-rev-count]');
+  const cards = [...revList.children];
+  const step = () => cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : revList.clientWidth;
+  const update = () => {
+    const first = Math.round(revList.scrollLeft / step());
+    const perView = Math.max(1, Math.round(revList.clientWidth / step()));
+    const last = Math.min(cards.length, first + perView);
+    prev.disabled = revList.scrollLeft <= 2;
+    next.disabled = revList.scrollLeft + revList.clientWidth >= revList.scrollWidth - 2;
+    count.textContent = `${first + 1}–${last} of ${cards.length}`;
+  };
+  prev.addEventListener('click', () => revList.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => revList.scrollBy({ left: step(), behavior: 'smooth' }));
+  revList.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', update);
+  update();
+}

@@ -348,6 +348,16 @@ body.menu-open .mobile-bar { display: none; }
 .review__src { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-light); }
 .review blockquote { font-size: 16px; line-height: 1.6; flex: 1; }
 .review__by { font-size: 13px; color: var(--muted-light); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.rev-nav { display: none; }
+.rev-nav__btn {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--color-white); border: 1px solid var(--line-light); color: var(--color-black); cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.rev-nav__btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rev-nav__btn:hover:not(:disabled) { background: var(--color-orange); border-color: var(--color-orange); }
+.rev-nav__btn:disabled { opacity: .35; cursor: default; }
+.rev-nav__count { font-size: 13px; font-weight: 600; letter-spacing: .06em; color: var(--muted-light); min-width: 70px; text-align: center; }
 .fineprint { margin-top: 20px; font-size: 13px; color: var(--muted-light); text-align: center; }
 
 /* 06 Get started + offer */
@@ -506,7 +516,19 @@ body.menu-open .mobile-bar { display: none; }
   .coach__name { margin-top: 0; font-size: 24px; align-self: end; }
   .coach__role { margin-top: 6px; align-self: start; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 
-  .reviews { grid-template-columns: 1fr; }
+  .reviews {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    scrollbar-width: none; padding-bottom: 4px;
+  }
+  .reviews::-webkit-scrollbar { display: none; }
+  .review { flex: 0 0 calc(50% - 6px); scroll-snap-align: start; padding: 16px; gap: 12px; }
+  .review blockquote { font-size: 14px; line-height: 1.5; }
+  .review__mark { font-size: 34px; height: 16px; }
+  .review__src { font-size: 9px; letter-spacing: .08em; }
+  .review .stars { font-size: 12px; }
+  .review__by { font-size: 12px; }
+  .review__by .confirm { font-size: 9px; }
+  .rev-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 20px; }
   .offer__steps li { grid-template-columns: 40px 1fr; gap: 14px; }
   .info > div { grid-template-columns: 1fr; gap: 4px; }
   .map { min-height: 260px; }
