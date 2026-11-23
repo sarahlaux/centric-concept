@@ -1,417 +1,495 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Centric Fitness Club | Small group training in Redondo Beach</title>
-<meta name="description" content="Small group strength and cardio classes with a one-on-one feel in Redondo Beach, CA.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* Layout: off-white editorial sections alternating with charcoal, tall condensed headings, wide small caps,
-   rounded photos and taupe pills. Centric orange stays a small accent. */
-:root {
-  --paper: #f3f2ee;     /* off-white sections */
-  --ink: #15181b;       /* charcoal text and dark sections */
-  --panel: #202326;     /* raised panels on charcoal */
-  --panel-2: #2a2d30;
-  --taupe: #67645c;     /* buttons, grey heading lines (5.6:1 on paper) */
-  --white: #f4f4f2;
-  --grey: #8f8f8b;      /* secondary text on charcoal */
-  --grey-ink: #5d5b55;  /* secondary text on paper */
-  --line: #33363a;
-  --orange: #ea5b0c;    /* Centric orange */
-  --display: "Oswald", "Arial Narrow", sans-serif;
-  --wide: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --gut: clamp(16px, 4vw, 56px);
-}
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.65 var(--wide); -webkit-font-smoothing: antialiased; }
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
-/* Concept page: buttons and links look real but go nowhere */
-a:not([href]) { cursor: pointer; }
-:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gut); }
-.sec { padding: clamp(80px, 9vw, 130px) 0; }
-.dark { background: var(--ink); color: var(--white); }
-.eyebrow { margin: 0; font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .16em; text-transform: uppercase; }
-.display { margin: 0; font-family: var(--display); font-weight: 600; text-transform: uppercase; line-height: 1; letter-spacing: 0; }
-.h2 { font-size: clamp(34px, 4.2vw, 56px); text-wrap: balance; }
-.h2 .slash { color: var(--orange); font-weight: 400; }
-.small { margin: 0; color: var(--grey); font-size: 11px; font-stretch: 125%; letter-spacing: .04em; text-transform: uppercase; line-height: 1.5; }
-.pill { display: inline-flex; align-items: center; justify-content: center; padding: 18px 40px; border-radius: 99px; background: var(--taupe); color: var(--white); font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; transition: background-color .2s; }
-.pill:hover { background: var(--ink); }
-.dark .pill:hover { background: var(--orange); }
-.arrow-link { display: inline-flex; align-items: center; gap: 48px; padding-bottom: 10px; border-bottom: 1.5px solid currentColor; font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
-.arrow-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: translate .2s; }
-.arrow-link:hover svg { translate: 4px 0; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 0; border-radius: 4px; background: var(--white); color: var(--ink); font: inherit; font-size: 11px; font-weight: 700; font-stretch: 125%; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color .2s, color .2s; }
-.btn:hover { background: var(--orange); color: var(--white); }
-.bracket { display: inline-flex; gap: 14px; font-size: 12px; font-weight: 600; font-stretch: 125%; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
-.bracket::before { content: "["; color: var(--orange); }
-.bracket::after { content: "]"; color: var(--orange); }
-.bracket:hover { color: var(--orange); }
-
-/* ---------- Top bar ---------- */
-.top { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px var(--gut); background: var(--ink); color: var(--white); }
-.top__logo { width: 120px; }
-.top nav ul { display: flex; gap: clamp(20px, 3vw, 48px); margin: 0; padding: 0; list-style: none; }
-.top nav a { font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
-.top nav a:hover { color: var(--orange); }
-
-/* ---------- Hero ---------- */
-.hero { position: relative; display: grid; place-items: center; min-height: calc(100svh - 74px); padding: 80px var(--gut); overflow: hidden; color: var(--white); text-align: center; }
-.hero__img { position: absolute; top: -12%; left: 0; width: 100%; height: 124%; will-change: transform; object-fit: cover; object-position: 60% 50%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgb(21 24 27 / .42), rgb(21 24 27 / .62)); }
-.hero__in { position: relative; z-index: 1; display: grid; justify-items: center; gap: 22px; }
-.hero h1 { font-size: clamp(64px, 11vw, 156px); font-weight: 500; letter-spacing: .14em; margin-right: -.14em; line-height: .9; }
-/* On load a cool grey band sweeps through the letters from left to right, then they settle back to white */
-@supports (-webkit-background-clip: text) or (background-clip: text) {
-  .hero h1 { background: linear-gradient(100deg, var(--white) 0 34%, #8d9094 42%, #4e5256 50%, #8d9094 58%, var(--white) 66% 100%); background-size: 300% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: letter-wave 4.5s cubic-bezier(.45, 0, .25, 1) .6s both; }
-  @keyframes letter-wave { from { background-position: 100% 0; } to { background-position: 0% 0; } }
-}
-@media (prefers-reduced-motion: reduce) { .hero h1 { animation: none; } }
-.hero__sub { margin: 0; font-family: var(--display); font-size: clamp(18px, 1.8vw, 24px); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
-.hero__sub span { color: var(--orange); }
-.hero__down { margin-top: 30px; width: 22px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; opacity: .85; }
-
-/* ---------- About ---------- */
-.statement { margin: 26px auto 0; max-width: 18ch; text-align: center; font-size: clamp(40px, 5.6vw, 80px); line-height: .98; }
-.statement span { display: block; color: var(--taupe); font-family: var(--wide); font-weight: 600; font-stretch: 112%; font-size: .8em; letter-spacing: -.01em; }
-.about__eyebrow { text-align: center; }
-.about { display: grid; grid-template-columns: 1fr 2fr; gap: 18px 40px; align-content: start; margin-top: clamp(64px, 8vw, 120px); }
-.dot { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 15px; font-weight: 500; }
-.dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
-.about__statement { margin: 0; font-size: clamp(26px, 3.1vw, 44px); font-weight: 500; line-height: 1.16; letter-spacing: -.02em; }
-.about__statement.is-live .w { color: #b9b6ae; transition: color .25s; }
-.about__statement.is-live .w.on { color: var(--ink); }
-.about__more { grid-column: 2; }
-.about__img { grid-row: span 2; width: 100%; height: 0; min-height: 100%; object-fit: cover; border-radius: 14px; }
-.about__more p { margin: 0 0 26px; max-width: 46ch; color: var(--grey-ink); font-size: 16px; }
-
-/* ---------- Class breakdown: charcoal copy beside a photo with a vertical label ---------- */
-.split { display: grid; grid-template-columns: 1fr 1fr; }
-.split__copy { padding: clamp(70px, 8vw, 120px) clamp(24px, 6vw, 96px); }
-.split__copy h2 { font-size: clamp(40px, 4.6vw, 64px); line-height: .98; }
-.split__lead { margin: 28px 0 0; max-width: 34ch; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.4; }
-.split__body { margin: 20px 0 0; max-width: 46ch; color: var(--grey); font-size: 15px; }
-.phases { margin: 34px 0 40px; padding: 0; list-style: none; }
-.phases li { display: grid; grid-template-columns: 74px 1fr; gap: 18px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--line); }
-.phases li:last-child { border-bottom: 1px solid var(--line); }
-.phases b { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1; }
-.phases b small { display: block; margin-top: 4px; color: var(--grey); font-family: var(--wide); font-size: 10px; font-weight: 600; font-stretch: 125%; letter-spacing: .12em; }
-.phases span { color: var(--grey); font-size: 15px; line-height: 1.5; }
-.phases strong { color: var(--white); font-weight: 600; }
-.split__photo { position: relative; min-height: 520px; overflow: hidden; }
-.split__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.9); }
-.split__tag { position: absolute; top: 0; left: 0; z-index: 1; margin: 0; padding: 30px 0 0; writing-mode: vertical-rl; font-family: var(--display); font-size: clamp(64px, 8vw, 116px); font-weight: 600; line-height: .8; text-transform: uppercase; color: rgb(243 242 238 / .55); }
-
-/* ---------- Memberships (kept) ---------- */
-.head { display: flex; flex-wrap: wrap; align-items: end; gap: 18px 32px; }
-.head .small { max-width: 32ch; }
-.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 44px 0 0; padding: 0; list-style: none; }
-.plan { position: relative; display: flex; flex-direction: column; min-height: 340px; padding: 22px; border-radius: 6px; background: var(--panel); overflow: hidden; }
-.plan--feature { background: var(--panel-2); }
-.plan--feature > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.35); }
-.plan > :not(img) { position: relative; z-index: 2; }
-/* Spotlight: a soft white light and a bright edge follow the pointer across the cards (script sets --mx/--my per card) */
-.plan::before, .plan::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s; }
-.plan::after { background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .13), transparent 70%); }
-.plan::before { padding: 1.5px; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .95), rgb(255 255 255 / .15) 45%, transparent 75%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
-.plans.is-lit .plan::before, .plans.is-lit .plan::after { opacity: 1; }
-.plan { border: 1px solid rgb(255 255 255 / .06); }
-.plan__num { font-family: var(--display); font-size: 15px; color: var(--grey); }
-.plan h3 { margin: 8px 0 0; font-family: var(--display); font-size: 26px; font-weight: 700; text-transform: uppercase; line-height: 1; }
-.plan__price { margin: auto 0 4px; font-family: var(--display); font-size: clamp(44px, 4vw, 56px); font-weight: 700; line-height: 1; }
-.plan__price small { font-size: 16px; font-weight: 400; color: var(--grey); margin-left: 4px; }
-.plan__note { margin: 0 0 18px; }
-.plan .btn { align-self: flex-start; }
-.plan > .plan__flag { position: absolute; top: 22px; right: 22px; color: var(--orange); font-size: 10px; font-weight: 700; font-stretch: 125%; letter-spacing: .08em; text-transform: uppercase; }
-.trial { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; margin-top: 12px; padding: 22px clamp(18px, 3vw, 30px); border: 1px solid var(--orange); border-radius: 6px; }
-.trial p { margin: 0; font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px); font-weight: 600; text-transform: uppercase; line-height: 1.1; }
-.trial p span { color: var(--orange); }
-
-/* ---------- Reviews (kept): Google-style cards drifting sideways ---------- */
-.reviews { margin-top: 44px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.reviews__track { display: flex; gap: 12px; width: max-content; padding: 0; margin: 0; list-style: none; animation: drift 60s linear infinite; }
-.reviews:hover .reviews__track, .reviews:focus-within .reviews__track { animation-play-state: paused; }
-@keyframes drift { to { transform: translateX(calc(-50% - 6px)); } }
-.review { width: 340px; display: grid; gap: 12px; align-content: start; padding: 22px; border-radius: 6px; background: var(--panel); }
-.review__top { display: flex; align-items: center; gap: 12px; }
-.review__avatar { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--panel-2); font-weight: 700; font-size: 15px; }
-.review__name { font-size: 14px; font-weight: 600; line-height: 1.3; }
-.review__when { display: block; color: var(--grey); font-size: 12px; font-weight: 400; }
-.review__g { margin-left: auto; width: 20px; height: 20px; }
-.review__stars { color: #fbbc04; font-size: 15px; letter-spacing: 2px; }
-.review p { margin: 0; color: rgb(244 244 242 / .85); font-size: 14px; line-height: 1.55; }
-.reviews__summary { display: flex; align-items: center; gap: 12px; }
-.reviews__summary b { font-family: var(--display); font-size: 34px; font-weight: 600; line-height: 1; }
-@media (prefers-reduced-motion: reduce) {
-  .reviews { overflow-x: auto; mask-image: none; }
-  .reviews__track { animation: none; }
-  .reviews__track [aria-hidden="true"] { display: none; }
-}
-
-/* ---------- Contact ---------- */
-.contact__head { text-align: center; }
-.contact__head .statement { max-width: 20ch; }
-.statement .ln { display: block; color: inherit; font: inherit; letter-spacing: inherit; }
-/* Contact heading and class phases: each item fades up in turn when the section scrolls into view (script adds .is-armed) */
-[data-fade].is-armed .fx { opacity: 0; translate: 0 18px; transition: opacity 1s ease, translate 1s ease; transition-delay: calc(var(--i) * .3s); }
-[data-fade].is-armed.is-in .fx { opacity: 1; translate: 0 0; }
-[data-fade="x"].is-armed .fx { translate: -28px 0; }
-[data-fade="x"].is-armed.is-in .fx { translate: 0 0; }
-.contact { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 6vw, 90px); margin-top: clamp(50px, 6vw, 80px); }
-.contact dl { display: grid; gap: 22px; margin: 0; align-content: start; }
-.contact dt { color: var(--grey-ink); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; }
-.contact dd { margin: 4px 0 0; font-size: 17px; }
-.form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.field { display: grid; gap: 6px; }
-.field--full { grid-column: 1 / -1; }
-.field label { color: var(--grey-ink); font-size: 11px; font-weight: 600; font-stretch: 125%; letter-spacing: .14em; text-transform: uppercase; }
-.field input, .field select, .field textarea { width: 100%; padding: 14px 16px; border: 1px solid #d6d4cd; border-radius: 10px; background: #fff; color: var(--ink); font: inherit; font-size: 16px; }
-.field textarea { min-height: 130px; resize: vertical; }
-.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--taupe); outline-offset: 1px; }
-.form .pill { justify-self: start; border: 0; cursor: pointer; font-family: inherit; }
-.form__status { grid-column: 1 / -1; margin: 0; min-height: 1.5em; color: var(--grey-ink); font-size: 14px; }
-.foot { background: var(--taupe); color: var(--white); }
-.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 34px; padding-bottom: 34px; }
-.foot img { width: 120px; }
-.foot p { margin: 0; font-size: 11px; font-stretch: 125%; letter-spacing: .1em; text-transform: uppercase; }
-
-/* ---------- Tablet and phone ---------- */
-@media (max-width: 960px) {
-  .top nav { display: none; }
-  .about, .split, .contact { grid-template-columns: 1fr; }
-  .about__more { grid-column: 1; }
-  .about__img { grid-row: auto; aspect-ratio: 4 / 3; max-width: 520px; }
-  .split__photo { min-height: 420px; }
-  .plans { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 640px) {
-  .hero { min-height: calc(100svh - 66px); }
-  .hero h1 { letter-spacing: .08em; margin-right: -.08em; }
-  .phases li { grid-template-columns: 64px 1fr; }
-  .plans { grid-template-columns: 1fr; }
-  .plan { min-height: 260px; }
-  .review { width: 290px; }
-  .form { grid-template-columns: 1fr; }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centric Fitness Club | Small group fitness classes in Redondo Beach, CA</title>
+  <meta name="description" content="Coached strength, mobility and conditioning classes for every level. Start your 7-day trial for $10.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/class-core-and-mobility.jpg" imagesrcset="img/class-core-and-mobility-900.jpg 900w, img/class-core-and-mobility.jpg 1800w" imagesizes="100vw">
+  <link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 <body>
 
-<div class="top">
-  <img class="top__logo" src="img/logo-white.png" alt="Centric Fitness Club" width="1480" height="300">
-  <nav aria-label="Main">
-    <ul>
-      <li><a>About</a></li>
-      <li><a>Classes</a></li>
-      <li><a>Memberships</a></li>
-      <li><a>Reviews</a></li>
-      <li><a>Contact</a></li>
-    </ul>
-  </nav>
-  <a class="btn">Book a class</a>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ SHARED HEADER (copy as-is to every page; move aria-current to that page's link) ============ -->
+<!-- PROMO BAR: swap the text and link for the free week / New Year offer, or delete this <div> to turn it off. -->
+<div class="promo">
+  <p>Try Centric: 7 days of coached classes for $10. <a href="#book" data-book>Book now <span aria-hidden="true">→</span></a></p>
 </div>
 
-<header class="hero">
-  <img class="hero__img" src="img/hero-runners.jpg" alt="" fetchpriority="high">
-  <div class="hero__in">
-    <p class="eyebrow">Redondo Beach fitness club</p>
-    <h1 class="display">Centric</h1>
-    <p class="hero__sub">Small group classes <span>//</span> one-on-one feel</p>
-    <svg class="hero__down" viewBox="0 0 22 30" aria-hidden="true"><path d="M3 6l8 8 8-8M3 16l8 8 8-8"/></svg>
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="index.html" aria-label="Centric Fitness Club home">
+      <img src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__pill">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="#book" data-book>Sign up</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="#book" data-book>Start your 7-day trial for $10</a>
   </div>
 </header>
+<!-- ============ /SHARED HEADER ============ -->
 
-<main>
-  <section class="sec" aria-labelledby="about-h">
+<main id="main">
+
+  <!-- HERO (dark) -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__card">
+      <img class="hero__img"
+           src="img/class-core-and-mobility.jpg"
+           srcset="img/class-core-and-mobility-900.jpg 900w, img/class-core-and-mobility.jpg 1800w"
+           sizes="100vw" width="1800" height="1350"
+           alt="A Centric class doing core and mobility work across a bright, open gym floor">
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <h1 class="hero__title" id="hero-title">Leave <em>better.</em></h1>
+        <p class="hero__sub">Coached strength, mobility and conditioning classes for every level. Challenge yourself at your own pace.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+        </div>
+        <p class="hero__trust"><span class="hero__stars" aria-hidden="true">★★★★★</span> 5.0 on Google (19 reviews) · Small group classes in Redondo Beach</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 WHAT IS CENTRIC (off-white): owner's description -->
+  <section class="section section--off about" aria-labelledby="about-title">
     <div class="wrap">
-      <p class="eyebrow about__eyebrow">Welcome to Centric</p>
-      <h2 class="display statement" id="about-h">Small group classes <span>with a</span> one-on-one feel</h2>
-      <div class="about">
-        <img class="about__img" src="img/about.jpg" alt="A woman with wrapped hands catching her breath beside a barbell rack" loading="lazy" style="object-position:50% 30%">
-        <p class="about__statement" data-statement>Centric is a Redondo Beach gym built around small groups. Every class is coached by someone who knows your name, your numbers and your form, and the people training beside you are the reason you keep coming back.</p>
-        <div class="about__more">
-          <div>
-            <p>We program functional movement, hold a high standard on form, and train you to move better in daily life, from the core out. Whether it's your first week or your fifth year, you'll leave better than you came.</p>
-            <a class="pill">Try 7 days for $10</a>
-          </div>
+      <div class="about__top">
+        <div class="reveal">
+          <p class="eyebrow">01 / About Centric</p>
+          <h2 class="display" id="about-title">What is<br><span class="accent">Centric?</span></h2>
+        </div>
+        <div class="about__copy reveal">
+          <p class="about__lead">Small group classes with a one-on-one feel.</p>
+          <p>Every class is full-body: strength, cardio, plyometric and mobility work, with a mix of lifts, intensities and tempos. Pairing strength and cardio in one session makes it metabolic training, and you’re naturally motivated by the people around you. We believe you’ll find your center here.</p>
+          <p>Each class starts with a functional warm-up and runs 40–50 minutes, so you’re in and out within an hour. We program functional movements and set high standards for quality form. Our goal is to have you moving well in daily life, working from the core out.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="dark split" aria-labelledby="class-h">
-    <div class="split__copy">
-      <h2 class="display" id="class-h">How a class<br>breaks down</h2>
-      <p class="split__lead">Every session builds strength first, then raises your heart rate, then finishes for time.</p>
-      <p class="split__body">We lift while you're fresh, so your form stays clean and the weight can climb. Cardio comes next to keep your heart rate up while your muscles are already working, and a short finisher pushes the pace. Strength plus cardio is what makes it metabolic, and it's how we fit a full-body workout into under an hour.</p>
-      <ol class="phases" data-fade>
-        <li class="fx"><b>18<small>Min</small></b><span><strong>Strength.</strong> Controlled lifts and core work at a steady tempo.</span></li>
-        <li class="fx"><b>14<small>Min</small></b><span><strong>Cardio.</strong> Jump rope, presses and plyometrics to lift the heart rate.</span></li>
-        <li class="fx"><b>11<small>Min</small></b><span><strong>Finisher.</strong> A capped round for time to leave it all on the floor.</span></li>
+  <!-- 02 SOUND FAMILIAR (light) — layout from bold-gym numbered list -->
+  <section class="section section--white" aria-labelledby="sf-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">02 / Sound familiar?</p>
+          <h2 class="display" id="sf-title">Sound<br><span class="accent">familiar?</span></h2>
+        </div>
+        <p class="section-head__aside">Four things we hear from almost everyone before their first class.</p>
+      </div>
+
+      <ol class="rows">
+        <li class="row reveal">
+          <h3 class="row__title">“I never know what to do at the gym.”</h3>
+          <p class="row__text">Every class is planned and coached. Just show up.</p>
+          <span class="row__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+        </li>
+        <li class="row reveal">
+          <h3 class="row__title">“I can’t stay consistent.”</h3>
+          <p class="row__text">Coaches know your name, and the program builds week to week.</p>
+          <span class="row__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span>
+        </li>
+        <li class="row reveal">
+          <h3 class="row__title">“I’m scared I’ll get hurt.”</h3>
+          <p class="row__text">Form comes first, and every move can be scaled to you.</p>
+          <span class="row__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+        </li>
+        <li class="row reveal">
+          <h3 class="row__title">“I’m not fit enough yet.”</h3>
+          <p class="row__text">Same class, different weights. Everyone starts where they are.</p>
+          <span class="row__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
       </ol>
-      <a class="arrow-link">See the schedule <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
-    </div>
-    <div class="split__photo">
-      <img src="img/trial.jpg" alt="An athlete gripping a loaded barbell before a lift" loading="lazy">
-      <p class="split__tag" aria-hidden="true">The work /</p>
     </div>
   </section>
 
-  <section class="sec dark" aria-labelledby="plans-h">
+  <!-- 02 HOW A CLASS WORKS (dark): steps on top, sliding photo gallery below -->
+  <section class="section section--dark how" id="how" aria-labelledby="how-title">
     <div class="wrap">
-      <div class="head">
-        <h2 class="display h2" id="plans-h">Memberships <span class="slash">/</span></h2>
-        <p class="small">Unlimited classes on every plan. Pick the commitment that fits.</p>
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow eyebrow--dark">03 / How a class works</p>
+          <h2 class="display" id="how-title">Every class.<br><span class="accent">Same format.</span></h2>
+        </div>
+        <p class="section-head__aside section-head__aside--label">Inside Centric</p>
       </div>
-      <ul class="plans" data-fade="x">
-        <li class="plan fx"><span class="plan__num">01.</span><h3>Drop in</h3><p class="plan__price">$30</p><p class="small plan__note">Just visiting? One session.</p><a class="btn">Book a class</a></li>
-        <li class="plan plan--feature fx"><img src="img/strength.jpg" alt="" loading="lazy"><span class="plan__flag">Most popular</span><span class="plan__num">02.</span><h3>Month-to-month</h3><p class="plan__price">$199<small>/mo</small></p><p class="small plan__note">Unlimited classes. No commitment.</p><a class="btn">Join now</a></li>
-        <li class="plan fx"><span class="plan__num">03.</span><h3>3-month unlimited</h3><p class="plan__price">$560</p><p class="small plan__note">Big savings. Renews every 3 months.</p><a class="btn">Join now</a></li>
-        <li class="plan fx"><span class="plan__num">04.</span><h3>1-year unlimited</h3><p class="plan__price">$2,150</p><p class="small plan__note">Biggest savings. One-time payment.</p><a class="btn">Join now</a></li>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <div class="step__top"><span class="step__num">01</span><span class="step__time">18 min</span></div>
+          <h3 class="step__title">Strength</h3>
+          <p>A different main lift every day, plus accessory and mobility work to prevent injury and help you move well.</p>
+          <div class="step__why">
+            <p class="step__why-label">Why it works</p>
+            <p>You lift while you’re fresh, so your form is sharper and every rep counts. Research on combined training suggests lifting before cardio leads to better strength gains, without costing your endurance.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step__top"><span class="step__num">02</span><span class="step__time">12–15 min</span></div>
+          <h3 class="step__title">Interval 1</h3>
+          <p>Full-body conditioning.</p>
+          <div class="step__why">
+            <p class="step__why-label">Why it works</p>
+            <p>You keep moving through the exercises for the whole interval, so your heart rate stays up and your heart and lung capacity builds. The workout is planned for you. You choose your weights and when to take a breather.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step__top"><span class="step__num">03</span><span class="step__time">9–12 min</span></div>
+          <h3 class="step__title">Interval 2</h3>
+          <p>A harder full-body finish.</p>
+          <div class="step__why">
+            <p class="step__why-label">Why it works</p>
+            <p>Another nonstop round that builds on the first. Need a break? Take one. Want lighter weights, or a bigger challenge? Go for it. It’s structured for you, and you decide how to attack it.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="gallery reveal" aria-roledescription="carousel" aria-label="Photos from inside Centric">
+      <div class="gallery__viewport">
+        <ul class="gallery__track" data-gallery-track>
+          <li class="slide">
+            <img src="img/class-strength-training-900.jpg" srcset="img/class-strength-training-900.jpg 900w, img/class-strength-training.jpg 1800w" sizes="(max-width: 720px) 82vw, 560px" width="900" height="675" loading="lazy"
+                 alt="Members lifting during a class: barbell lunges, dumbbell bench presses and banded squats">
+            <p class="slide__cap"><span>Strength in progress</span><span>Coached lifts</span></p>
+          </li>
+          <li class="slide">
+            <img src="img/class-core-and-mobility-900.jpg" srcset="img/class-core-and-mobility-900.jpg 900w, img/class-core-and-mobility.jpg 1800w" sizes="(max-width: 720px) 82vw, 560px" width="900" height="675" loading="lazy"
+                 alt="A class doing sit-ups, stretches and kneeling plate work across the gym floor">
+            <p class="slide__cap"><span>Core and mobility</span><span>Built into every class</span></p>
+          </li>
+          <li class="slide">
+            <img src="img/members-group-photo-900.jpg" srcset="img/members-group-photo-900.jpg 900w, img/members-group-photo.jpg 1800w" sizes="(max-width: 720px) 82vw, 560px" width="900" height="675" loading="lazy"
+                 alt="About ten smiling Centric members posing together after class">
+            <p class="slide__cap"><span>The Centric crew</span><span>After class</span></p>
+          </li>
+          <li class="slide">
+            <img src="img/gym-empty-racks-900.jpg" srcset="img/gym-empty-racks-900.jpg 900w, img/gym-empty-racks.jpg 1800w" sizes="(max-width: 720px) 82vw, 560px" width="900" height="675" loading="lazy"
+                 alt="The empty Centric gym floor: squat racks, benches and mirrors along a clean white wall">
+            <p class="slide__cap"><span>The floor</span><span>Clean and organized</span></p>
+          </li>
+        </ul>
+      </div>
+      <div class="wrap gallery__controls">
+        <button class="gallery__toggle" type="button" aria-pressed="false" data-gallery-toggle>
+          <span class="gallery__toggle-icon" aria-hidden="true"></span><span data-gallery-label>Pause</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="compare reveal">
+        <h3 class="compare__title">What makes it different</h3>
+        <table class="compare__table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Topic</span></th>
+              <th scope="col">A typical group class</th>
+              <th scope="col" class="compare__us">Centric</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Workout</th>
+              <td data-label="A typical group class">Changes randomly day to day</td>
+              <td data-label="Centric" class="compare__us">Same proven format, with a different main lift each day</td>
+            </tr>
+            <tr>
+              <th scope="row">Order</th>
+              <td data-label="A typical group class">Cardio and weights mixed at random</td>
+              <td data-label="Centric" class="compare__us">Strength first, then intervals that build</td>
+            </tr>
+            <tr>
+              <th scope="row">Coaching</th>
+              <td data-label="A typical group class">One instructor leading from the front</td>
+              <td data-label="Centric" class="compare__us">Small groups with focused coaching: form checked and moves scaled for you</td>
+            </tr>
+            <tr>
+              <th scope="row">Mobility &amp; core</th>
+              <td data-label="A typical group class">Saved for the cooldown, if at all</td>
+              <td data-label="Centric" class="compare__us">Built into every class</td>
+            </tr>
+            <tr>
+              <th scope="row">Result</th>
+              <td data-label="A typical group class">A hard workout</td>
+              <td data-label="Centric" class="compare__us">You move better, get stronger and stay consistent</td>
+            </tr>
+          </tbody>
+        </table>
+        <a class="link-arrow link-arrow--light" href="about.html#method">More about the method <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 IS THIS CROSSFIT (light band) -->
+  <section class="section section--off band" aria-labelledby="cf-title">
+    <div class="wrap band__inner reveal">
+      <h2 class="display band__title" id="cf-title">Is this CrossFit? <span class="accent">No.</span></h2>
+      <div>
+        <p class="band__text">Centric runs one consistent, science-backed format, coached for form and scaled to you. The only person you’re competing with is yourself.</p>
+        <ul class="chips">
+          <li>One format</li>
+          <li>Coached for form</li>
+          <li>Scaled to you</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 COACHES (dark) -->
+  <section class="section section--dark" aria-labelledby="coach-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow eyebrow--dark">04 / Coaches</p>
+          <h2 class="display" id="coach-title">Coached by people<br><span class="accent">who care.</span></h2>
+        </div>
+        <p class="section-head__aside">Technical, educated and certified. Your coach watches your form and scales every move to you.</p>
+      </div>
+
+      <ul class="coaches">
+        <li class="coach reveal">
+          <a href="about.html#coaches">
+            <div class="coach__photo"><img src="img/favicon.png" alt="" width="64" height="64"><span class="confirm confirm--dark">CONFIRM headshot</span></div>
+            <h3 class="coach__name">Rachel</h3>
+            <p class="coach__role">Coach <span class="confirm confirm--dark">CONFIRM title &amp; specialty</span></p>
+          </a>
+        </li>
+        <li class="coach reveal">
+          <a href="about.html#coaches">
+            <div class="coach__photo"><img src="img/favicon.png" alt="" width="64" height="64"><span class="confirm confirm--dark">CONFIRM headshot</span></div>
+            <h3 class="coach__name">Sloan</h3>
+            <p class="coach__role">Coach · Postpartum certified <span class="confirm confirm--dark">CONFIRM</span></p>
+          </a>
+        </li>
+        <li class="coach reveal">
+          <a href="about.html#coaches">
+            <div class="coach__photo"><img src="img/favicon.png" alt="" width="64" height="64"><span class="confirm confirm--dark">CONFIRM headshot</span></div>
+            <h3 class="coach__name">Coach name <span class="confirm confirm--dark">CONFIRM</span></h3>
+            <p class="coach__role">Nutrition certified <span class="confirm confirm--dark">CONFIRM</span></p>
+          </a>
+        </li>
       </ul>
-      <div class="trial">
-        <p>First time? <span>7 days for $10.</span></p>
-        <a class="bracket">Start your trial</a>
+      <a class="link-arrow link-arrow--light reveal" href="about.html#coaches">Meet the coaches <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- 05 MEMBER STORIES (light) — layout from bold-gym reviews -->
+  <section class="section section--white" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">05 / Member stories</p>
+          <h2 class="display rev-title" id="rev-title">What members<br><span class="accent">are saying.</span></h2>
+          <p class="section-head__intro">Every Google review is five stars. Here’s what members say.</p>
+        </div>
+        <div class="rating">
+          <p class="rating__score">5.0 <span class="rating__stars" aria-hidden="true">★★★★★</span></p>
+          <p class="rating__meta">19 Google reviews · 5/5 on ClassPass (13 reviews)</p>
+        </div>
+      </div>
+
+      <ul class="reviews">
+        <li class="review reveal">
+          <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
+          <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“I’ve struggled to find a gym that feels challenging, motivating, and keeps things from getting repetitive, but Centric has been exactly what I was looking for. The workouts combine strength and cardio, and every day is different.”</blockquote>
+          <p class="review__by">Amanda G.</p>
+        </li>
+        <li class="review reveal">
+          <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
+          <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“I was at least 20 years older [than] everyone else but they made me feel welcome and I got a great initiation work out, I will be a regular. So nice to have a local gym with a great coach!”</blockquote>
+          <p class="review__by">First-time member · <span class="confirm">CONFIRM name</span></p>
+        </li>
+        <li class="review reveal">
+          <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
+          <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“Awesome community and class sizes, well thought out workouts, always leaves me feeling accomplished before I start my day or after work. The instructors are incredibly friendly, knowledgeable, and motivating.”</blockquote>
+          <p class="review__by">Robert D.</p>
+        </li>
+        <li class="review reveal">
+          <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
+          <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“Rachel provides specific feedback for staying safe with proper form and motivates me to push my limits. I can always count on her classes to keep me active and having fun.”</blockquote>
+          <p class="review__by">Member · <span class="confirm">CONFIRM name</span></p>
+        </li>
+        <li class="review reveal">
+          <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
+          <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“I started coming to Centric using my ClassPass points, but I loved it so much I ditched ClassPass and got a membership!”</blockquote>
+          <p class="review__by">Natalie S.</p>
+        </li>
+        <li class="review reveal">
+          <div class="review__top"><span class="review__mark" aria-hidden="true">“</span><span class="review__src">Google review</span></div>
+          <p class="stars stars--deep" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“Rachel and the other coaches are awesome — super attentive, kind, and clearly invested in everyone’s progress.”</blockquote>
+          <p class="review__by">Romit G.</p>
+        </li>
+      </ul>
+      <p class="fineprint">Excerpts from Centric Fitness Club’s Google reviews.</p>
+    </div>
+  </section>
+
+  <!-- 06 GET STARTED + OFFER (light). Swappable: change the heading and button for seasonal offers. -->
+  <section class="section section--off offer" aria-labelledby="offer-title">
+    <div class="wrap offer__inner">
+      <div class="offer__main reveal">
+        <p class="eyebrow">06 / Get started</p>
+        <h2 class="offer__title" id="offer-title">7 days.<br>$10.<br><span class="accent">Every class.</span></h2>
+        <div class="offer__actions">
+          <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+          <a class="link-arrow" href="contact.html#pricing">See membership pricing <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <ol class="offer__steps">
+        <li class="reveal">
+          <span class="offer__num">1</span>
+          <div>
+            <h3>Book your trial.</h3>
+            <p>Book online in about a minute. Your $10 covers unlimited classes for 7 days <span class="confirm">CONFIRM</span>, with no commitment <span class="confirm">CONFIRM</span>.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="offer__num">2</span>
+          <div>
+            <h3>Meet your coach.</h3>
+            <p>Arrive 10 minutes early <span class="confirm">CONFIRM</span> for a quick walkthrough and form check before your first class.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="offer__num">3</span>
+          <div>
+            <h3>Find your fit.</h3>
+            <p>At the end of the week, pick the membership that matches your goals.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 07 FAQ TEASER (dark) -->
+  <section class="section section--dark" aria-labelledby="faq-title">
+    <div class="wrap faq-teaser">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow eyebrow--dark">07 / FAQ</p>
+          <h2 class="display" id="faq-title">Good<br><span class="accent">questions.</span></h2>
+        </div>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Is Centric CrossFit?</summary>
+          <div class="faq__body"><p>No. Every class is the same proven format: strength first, then two intervals that build. It’s coached for form and scaled to you.</p></div>
+        </details>
+        <details>
+          <summary>I’m out of shape. Can I still join?</summary>
+          <div class="faq__body"><p>Yes. All levels are welcome. It’s the same class with different weights, and your coach scales every move so you can start where you are.</p></div>
+        </details>
+        <details>
+          <summary>How many times a week should I come?</summary>
+          <div class="faq__body"><p>We recommend 2–3 times a week to start <span class="confirm confirm--dark">CONFIRM</span>. Your coach can help you build from there.</p></div>
+        </details>
+        <a class="link-arrow link-arrow--light" href="faq.html">See all FAQs <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
-  <section class="sec dark" aria-labelledby="rev-h" style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <h2 class="display h2" id="rev-h">What members say <span class="slash">/</span></h2>
-        <div class="reviews__summary"><b>5.0</b><div><span class="review__stars" aria-hidden="true">★★★★★</span><p class="small">Sample Google reviews for this concept</p></div></div>
-      </div>
-    </div>
-    <div class="reviews">
-      <ul class="reviews__track" data-reviews></ul>
-    </div>
-  </section>
-
-  <section class="sec" aria-labelledby="contact-h">
-    <div class="wrap">
-      <div class="contact__head" data-fade>
-        <p class="eyebrow fx">Get in touch</p>
-        <h2 class="display statement" id="contact-h"><span class="ln fx">Ready to find</span> <span class="fx">your center?</span> <span class="ln fx">Come train with us</span></h2>
-      </div>
-      <div class="contact">
-        <dl>
-          <div><dt>Visit</dt><dd>2806 #B Phelan Ln<br>Redondo Beach, CA 90278</dd></div>
-          <div><dt>Call</dt><dd>(310) 504-4265</dd></div>
-          <div><dt>Email</dt><dd>mail@centricfitnessclub.com</dd></div>
-          <div><dt>Instagram</dt><dd>@centricfitnessclub</dd></div>
+  <!-- 09 LOCATION (light) -->
+  <section class="section section--white" aria-labelledby="loc-title">
+    <div class="wrap location">
+      <div class="reveal">
+        <p class="eyebrow">08 / Visit</p>
+        <h2 class="display" id="loc-title">Find<br><span class="accent">Centric.</span></h2>
+        <dl class="info">
+          <div><dt>Address</dt><dd>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+13105044265">(310) 504-4265</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></dd></div>
+          <div><dt>Hours</dt><dd>
+            <ul class="hours">
+              <li><span>Mon–Fri</span><span>6 AM–7 PM</span></li>
+              <li><span>Saturday</span><span>7 AM–12 PM</span></li>
+              <li><span>Sunday</span><span>Closed</span></li>
+            </ul>
+          </dd></div>
         </dl>
-        <form class="form" novalidate>
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="field field--full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field field--full"><label for="f-plan">I'm interested in</label>
-            <select id="f-plan" name="plan"><option>7 day trial ($10)</option><option>Drop in</option><option>Month-to-month unlimited</option><option>3-month unlimited</option><option>1-year unlimited</option><option>Personal training</option></select></div>
-          <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
-          <button class="pill" type="submit">Send message</button>
-          <p class="form__status" role="status"></p>
-        </form>
+        <div class="location__links">
+          <a class="btn btn--outline" href="schedule.html">Full class schedule <span aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Centric+Fitness+Club,+2806+Phelan+Ln+Unit+B,+Redondo+Beach,+CA+90278" target="_blank" rel="noopener">Get directions <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe title="Map showing Centric Fitness Club in Redondo Beach" src="https://www.google.com/maps?q=Centric+Fitness+Club,+2806+Phelan+Ln+Unit+B,+Redondo+Beach,+CA+90278&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
+
 </main>
 
-<footer class="foot">
+<!-- ============ SHARED FOOTER (copy as-is to every page) ============ -->
+<footer class="footer">
   <div class="wrap">
-    <img src="img/logo-white.png" alt="Centric Fitness Club" width="1480" height="300" loading="lazy">
-    <p>© 2026 Centric Fitness Club · Concept by Sand City Designs</p>
+    <div class="footer__cta">
+      <h2 class="footer__title">Leave <em>better.</em><br>Start this week.</h2>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217" loading="lazy">
+        <p class="footer__small">Coached strength, mobility and conditioning for every level.</p>
+      </div>
+      <div>
+        <p class="footer__head">Visit</p>
+        <p>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</p>
+        <p><a href="tel:+13105044265">(310) 504-4265</a></p>
+        <p><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></p>
+        <p>Mon–Fri 6 AM–7 PM<br>Sat 7 AM–12 PM · Sun closed</p>
+      </div>
+      <div>
+        <p class="footer__head">Follow</p>
+        <p><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">Instagram · @centricfitnessclub</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Centric Fitness Club</p>
+    </div>
   </div>
 </footer>
 
-<script>
-// Reviews: build the cards, then a hidden second copy so the row loops without a gap
-const REVIEWS = [
-  ["Jessica M.", "2 weeks ago", "The coaches actually watch your form the whole class. I've never felt this strong, and I'm in and out before work."],
-  ["Daniel R.", "1 month ago", "Small classes, great energy and workouts that are never the same twice. Best gym in Redondo, hands down."],
-  ["Alyssa K.", "3 weeks ago", "Started with the 7 day trial and signed up on day three. Everyone knows your name here."],
-  ["Marcus T.", "2 months ago", "Perfect mix of lifting and cardio. The programming is smart and they scale everything to where you're at."],
-  ["Priya S.", "1 week ago", "I was intimidated by group classes, but this feels like personal training with friends. Love it."],
-  ["Chris L.", "5 days ago", "Clean space, awesome coaches, and a crew that pushes you. I leave better than I came every time."]
-];
-const G = '<svg class="review__g" viewBox="0 0 48 48" aria-label="Google"><path fill="#ffc107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#ff3d00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4caf50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976d2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>';
-const card = ([name, when, text]) => `<div class="review__top"><span class="review__avatar" aria-hidden="true">${name[0]}</span><span class="review__name">${name}<span class="review__when">${when}</span></span>${G}</div><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><p>${text}</p>`;
-const track = document.querySelector('[data-reviews]');
-track.innerHTML = REVIEWS.map(r => `<li class="review">${card(r)}</li>`).join('') + REVIEWS.map(r => `<li class="review" aria-hidden="true">${card(r)}</li>`).join('');
+<!-- Mobile: pinned trial bar -->
+<div class="mobile-bar">
+  <a class="btn btn--primary btn--block" href="#book" data-book>Try 7 days for $10</a>
+</div>
+<!-- ============ /SHARED FOOTER ============ -->
 
-// Hero parallax: the photo drifts at a third of the scroll speed while the hero is on screen
-const heroImg = document.querySelector('.hero__img');
-if (heroImg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const hero = heroImg.parentElement;
-  let ticking = false;
-  const move = () => {
-    ticking = false;
-    const r = hero.getBoundingClientRect();
-    if (r.bottom < 0 || r.top > innerHeight) return;
-    heroImg.style.transform = `translate3d(0, ${(-r.top * 0.3).toFixed(1)}px, 0)`;
-  };
-  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
-  move();
-}
-
-// About statement: words darken as it scrolls up the screen
-const st = document.querySelector('[data-statement]');
-if (st && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  st.innerHTML = st.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
-  const words = [...st.querySelectorAll('.w')];
-  st.classList.add('is-live');
-  let busy = false;
-  const paint = () => {
-    busy = false;
-    const r = st.getBoundingClientRect(), vh = innerHeight;
-    const p = Math.min(1, Math.max(0, (vh * .85 - r.top) / (r.height + vh * .4)));
-    const n = Math.round(p * words.length);
-    words.forEach((w, i) => w.classList.toggle('on', i < n));
-  };
-  addEventListener('scroll', () => { if (!busy) { busy = true; requestAnimationFrame(paint); } }, { passive: true });
-  addEventListener('resize', paint);
-  paint();
-}
-
-// Membership cards: the spotlight follows the pointer across all four cards, like light moving over them
-const plans = document.querySelector('.plans');
-if (plans && matchMedia('(hover: hover)').matches) {
-  const cards = [...plans.querySelectorAll('.plan')];
-  let frame = 0, px = 0, py = 0;
-  const light = () => {
-    frame = 0;
-    cards.forEach(c => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', `${px - r.left}px`); c.style.setProperty('--my', `${py - r.top}px`); });
-  };
-  plans.addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; plans.classList.add('is-lit'); if (!frame) frame = requestAnimationFrame(light); });
-  plans.addEventListener('pointerleave', () => plans.classList.remove('is-lit'));
-}
-
-// Contact heading fade-in
-document.querySelectorAll('[data-fade]').forEach(box => {
-  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  box.querySelectorAll('.fx').forEach((el, i) => el.style.setProperty('--i', i));
-  box.classList.add('is-armed');
-  const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { box.classList.add('is-in'); io.disconnect(); } }, { threshold: .35 });
-  io.observe(box);
-});
-
-// Concept form: nothing is sent
-const form = document.querySelector('.form'), status = document.querySelector('.form__status');
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const missing = [...form.querySelectorAll('[required]')].find(f => !f.value.trim() || !f.checkValidity());
-  if (missing) { status.textContent = `Add your ${missing.labels[0].textContent.toLowerCase()} so we can get back to you.`; missing.focus(); return; }
-  status.textContent = 'Thanks. This is a concept page, so nothing was sent.';
-  form.reset();
-});
-</script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>
