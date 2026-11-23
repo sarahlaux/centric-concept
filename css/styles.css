@@ -480,15 +480,18 @@ body.menu-open .mobile-bar { display: none; }
   .row__icon { display: none; }
 
   .steps { grid-template-columns: 1fr; gap: 12px; }
-  .compare__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .compare__table, .compare__table tbody, .compare__table tr, .compare__table th, .compare__table td { display: block; width: 100% !important; }
-  .compare__table tr { padding: 18px 0; border-bottom: 1px solid var(--line-dark); }
-  .compare__table th, .compare__table td { border: 0; padding: 0; }
-  .compare__table tbody th { margin-bottom: 10px; font-size: 16px; }
-  .compare__table td { padding: 6px 0 6px 30px !important; position: relative; font-size: 15px; }
-  .compare__table td:not(.compare__us)::before { content: "Typical: "; color: rgba(255,255,255,.45); }
-  .compare__table td:not(.compare__us) { padding-left: 30px !important; }
-  .compare__table td.compare__us::before { top: 8px; }
+  .compare__table, .compare__table thead, .compare__table tbody { display: block; width: 100%; }
+  .compare__table tr { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line-dark); }
+  .compare__table th, .compare__table td { display: block; width: auto !important; border: 0; padding: 0 !important; }
+  .compare__table thead tr { padding: 0 0 12px; border-bottom-color: rgba(255,255,255,.3); }
+  .compare__table thead th:first-child { display: none; }
+  .compare__table thead th { font-size: 10px; }
+  .compare__table tbody th { grid-column: 1 / -1; margin-bottom: 10px; font-size: 16px; }
+  .compare__table td { font-size: 14px; line-height: 1.45; }
+  .compare__table td.compare__us { padding-left: 0 !important; }
+  .compare__table td.compare__us::before { position: static; display: block; margin-bottom: 8px; width: 16px; height: 16px; background-size: 12px; }
+  .compare__table thead th.compare__us { padding-left: 0 !important; }
+  .compare__table tbody td:not(.compare__us)::before { content: ""; display: block; width: 16px; height: 16px; margin-bottom: 8px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.3); }
 
   .step__title { margin-top: 14px; }
   .gallery__controls { justify-content: flex-start; }
