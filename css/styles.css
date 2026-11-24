@@ -650,3 +650,13 @@ body.menu-open .mobile-bar { display: none; }
 .plan__note { color: var(--muted-light); font-size: 15px; flex: 1; margin-bottom: 8px; }
 .pricing__fine { margin-top: 16px; }
 @media (max-width: 860px) { .plans { grid-template-columns: 1fr; gap: 20px; } }
+
+/* About page */
+.m-hero--photo { min-height: clamp(520px, 74svh, 800px); }
+.m-hero--photo .m-hero__shade { background: linear-gradient(0deg, rgba(17,17,17,.88), rgba(17,17,17,.62) 55%, rgba(17,17,17,.72)); }
+.duo .split__panel p + p { margin-top: -6px; }
+.coaches--about { margin-bottom: 0; }
+.coach__bio { margin-top: 12px; color: var(--muted-dark); font-size: 15px; }
+.center-block + .center-block { border-top: 1px solid var(--line-light); }
+.center-block__actions { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 28px; }
+@media (max-width: 720px) { .m-hero--photo { min-height: 0; } }

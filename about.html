@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Centric Fitness Club, Redondo Beach</title>
+  <meta name="description" content="Small group classes with a one-on-one feel in Redondo Beach. Meet Centric Fitness Club and our coaches.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/about-hero.jpg" imagesrcset="img/about-hero-900.jpg 900w, img/about-hero.jpg 2000w" imagesizes="100vw">
+  <link rel="stylesheet" href="css/styles.css?v=10">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ SHARED HEADER (copy as-is to every page; move aria-current to that page's link) ============ -->
+<!-- PROMO BAR: swap the text and link for the free week / New Year offer, or delete this <div> to turn it off. -->
+<div class="promo">
+  <p>Try Centric: 7 days of coached classes for $10. <a href="#book" data-book>Book now <span aria-hidden="true">→</span></a></p>
+</div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="index.html" aria-label="Centric Fitness Club home">
+      <img src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__pill">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="index.html#pricing">Memberships</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="#book" data-book>Sign up</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="index.html#pricing">Memberships</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="#book" data-book>Start your 7-day trial for $10</a>
+  </div>
+</header>
+<!-- ============ /SHARED HEADER ============ -->
+
+<main id="main">
+
+  <!-- ABOUT HERO: placeholder photo, darkened -->
+  <section class="m-hero m-hero--photo" aria-labelledby="a-title">
+    <img class="m-hero__img" src="img/about-hero.jpg" srcset="img/about-hero-900.jpg 900w, img/about-hero.jpg 2000w" sizes="100vw" width="2000" height="1508" alt="">
+    <div class="m-hero__shade" aria-hidden="true"></div>
+    <div class="m-hero__content">
+      <p class="eyebrow eyebrow--dark">About Centric</p>
+      <h1 class="m-hero__title" id="a-title">Find your <span class="accent">center.</span></h1>
+      <p class="m-hero__sub">Small group classes with a one-on-one feel, in Redondo Beach.</p>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+  </section>
+
+  <!-- STORY + MOTTO side by side -->
+  <section class="duo" aria-label="Our story">
+    <div class="split__panel split__panel--dark">
+      <p class="eyebrow eyebrow--dark">Our story</p>
+      <h2 class="split__title">Why <span class="accent">Centric</span><br>exists.</h2>
+      <p>Centric started with a passion for movement and the human body, and a simple goal: help people move better and feel stronger, with a challenge that still feels safe and encouraging.</p>
+      <p>A lot of group classes skip mobility and the movement patterns your body needs, like rotations, holds and functional work. Centric was built to fill that gap: effective, fun and a little competitive, while building strength, healthy joints and heart and lung capacity.</p>
+    </div>
+    <div class="split__panel split__panel--light">
+      <p class="eyebrow">Our motto</p>
+      <h2 class="split__title"><span class="accent">Leave</span><br>better.</h2>
+      <p>When you walk in, you should feel welcomed and included, in a space that’s clean and organized. When you walk out, you should feel accomplished: better than when you came, and ready to tackle your next goal, whether that’s getting stronger, getting fitter or jumping higher.</p>
+      <a class="btn btn--primary" href="method.html">See our formula <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="center-block" aria-labelledby="a-expect">
+    <div class="wrap center-block__inner">
+      <p class="eyebrow">What to expect</p>
+      <h2 class="center-block__title" id="a-expect">Every level.<br><span class="accent">Your pace.</span></h2>
+      <p class="center-block__text">Whether you’re a former athlete or just getting started, you’re welcome here. Every class is coached, every move can be scaled, and the only person you’re competing with is yourself.</p>
+      <p class="center-block__label">What sets Centric apart</p>
+      <ul class="focus">
+        <li>Science-backed programming</li>
+        <li>Form and safety first</li>
+        <li>A semi-private feel</li>
+        <li>Mobility and core in every class</li>
+        <li>Fun and a little competitive</li>
+        <li>Everything scalable</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COACHES -->
+  <section class="section section--dark" id="coaches" aria-labelledby="a-coaches">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow--dark">The coaches</p>
+          <h2 class="display" id="a-coaches">Meet your<br><span class="accent">coaches.</span></h2>
+        </div>
+        <p class="section-head__aside">Technical, educated and caring, with athletic backgrounds and certifications like postpartum and nutrition coaching.</p>
+      </div>
+      <ul class="coaches coaches--about">
+        <li class="coach">
+          <div class="coach__photo"><img src="img/favicon.png" alt="" width="64" height="64"><span class="confirm confirm--dark">CONFIRM headshot</span></div>
+          <h3 class="coach__name">Rachel</h3>
+          <p class="coach__role">Coach <span class="confirm confirm--dark">CONFIRM title &amp; specialty</span></p>
+          <p class="coach__bio"><span class="confirm confirm--dark">CONFIRM short bio: background, certifications, why she coaches</span></p>
+        </li>
+        <li class="coach">
+          <div class="coach__photo"><img src="img/favicon.png" alt="" width="64" height="64"><span class="confirm confirm--dark">CONFIRM headshot</span></div>
+          <h3 class="coach__name">Sloan</h3>
+          <p class="coach__role">Coach · Postpartum certified <span class="confirm confirm--dark">CONFIRM</span></p>
+          <p class="coach__bio"><span class="confirm confirm--dark">CONFIRM short bio</span></p>
+        </li>
+        <li class="coach">
+          <div class="coach__photo"><img src="img/favicon.png" alt="" width="64" height="64"><span class="confirm confirm--dark">CONFIRM headshot</span></div>
+          <h3 class="coach__name">Coach name <span class="confirm confirm--dark">CONFIRM</span></h3>
+          <p class="coach__role">Nutrition certified <span class="confirm confirm--dark">CONFIRM</span></p>
+          <p class="coach__bio"><span class="confirm confirm--dark">CONFIRM short bio</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="center-block" aria-labelledby="a-cta">
+    <div class="wrap center-block__inner">
+      <p class="eyebrow">Come see for yourself</p>
+      <h2 class="center-block__title" id="a-cta">Your first week<br><span class="accent">is $10.</span></h2>
+      <p class="center-block__text">Seven days of coached classes, a walkthrough with your coach, and a chance to find the plan that fits.</p>
+      <div class="center-block__actions">
+        <a class="btn btn--dark" href="#book" data-book>Start your 7-day trial for $10</a>
+        <a class="link-arrow" href="index.html#pricing">See memberships <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER (copy as-is to every page) ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cta">
+      <h2 class="footer__title">Leave <em>better.</em><br>Start this week.</h2>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217" loading="lazy">
+        <p class="footer__small">Coached strength, mobility and conditioning for every level.</p>
+      </div>
+      <div>
+        <p class="footer__head">Visit</p>
+        <p>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</p>
+        <p><a href="tel:+13105044265">(310) 504-4265</a></p>
+        <p><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></p>
+        <p>Mon–Fri 6 AM–7 PM<br>Sat 7 AM–12 PM · Sun closed</p>
+      </div>
+      <div>
+        <p class="footer__head">Follow</p>
+        <p><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">Instagram · @centricfitnessclub</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Centric Fitness Club</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile: pinned trial bar -->
+<div class="mobile-bar">
+  <a class="btn btn--primary btn--block" href="#book" data-book>Try 7 days for $10</a>
+</div>
+<!-- ============ /SHARED FOOTER ============ -->
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>
