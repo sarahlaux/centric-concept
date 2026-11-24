@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Centric Method | Centric Fitness Club, Redondo Beach</title>
+  <meta name="description" content="Strength first, then cardio-driven intervals. How a Centric Fitness Club class works and why.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=10">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ SHARED HEADER (copy as-is to every page; move aria-current to that page's link) ============ -->
+<!-- PROMO BAR: swap the text and link for the free week / New Year offer, or delete this <div> to turn it off. -->
+<div class="promo">
+  <p>Try Centric: 7 days of coached classes for $10. <a href="#book" data-book>Book now <span aria-hidden="true">→</span></a></p>
+</div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="index.html" aria-label="Centric Fitness Club home">
+      <img src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__pill">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="#book" data-book>Sign up</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="#book" data-book>Start your 7-day trial for $10</a>
+  </div>
+</header>
+<!-- ============ /SHARED HEADER ============ -->
+
+<main id="main">
+
+  <!-- METHOD HERO: full photo, centered headline -->
+  <section class="m-hero" aria-labelledby="m-title">
+    <img class="m-hero__img" src="img/class-strength-training-900.jpg" srcset="img/class-strength-training-900.jpg 900w, img/class-strength-training.jpg 1800w" sizes="100vw" width="900" height="675" alt="A Centric class lifting: barbell lunges, dumbbell presses and banded squats">
+    <div class="m-hero__shade" aria-hidden="true"></div>
+    <div class="m-hero__content">
+      <p class="eyebrow eyebrow--dark">The Centric method</p>
+      <h1 class="m-hero__title" id="m-title">Our <span class="accent">formula.</span></h1>
+      <p class="m-hero__sub">Strength first. Cardio second. Moving well from the core out.</p>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+  </section>
+
+  <!-- SPLIT: photo left, black panel right -->
+  <section class="split" aria-labelledby="m-strength">
+    <div class="split__media"><img class="" src="img/strength-back-squat-900.jpg" srcset="img/strength-back-squat-900.jpg 900w, img/strength-back-squat.jpg 1800w" sizes="(max-width: 860px) 100vw, 50vw" width="675" height="900" loading="lazy" alt="A member doing a coached barbell back squat"></div>
+    <div class="split__panel split__panel--dark">
+      <p class="eyebrow eyebrow--dark">Step 1 · 15–20 minutes</p>
+      <h2 class="split__title" id="m-strength"><span class="accent">Strength</span><br>comes first.</h2>
+      <p>Every session starts with a 15–20 minute strength block. The focus is on finding the right weight for you at each rep count, while you’re fresh and your form is at its best.</p>
+      <a class="btn btn--outline-light" href="index.html#how">See how a class works <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- SPLIT (mirrored): light panel left, photo right -->
+  <section class="split split--flip" aria-labelledby="m-cardio">
+    <div class="split__media"><img class="" src="img/class-conditioning-interval-900.jpg" srcset="img/class-conditioning-interval-900.jpg 900w, img/class-conditioning-interval.jpg 1800w" sizes="(max-width: 860px) 100vw, 50vw" width="900" height="675" loading="lazy" alt="A class mid-interval doing dumbbell plank rows and overhead presses"></div>
+    <div class="split__panel split__panel--light">
+      <p class="eyebrow">Step 2 · 20–30 minutes</p>
+      <h2 class="split__title" id="m-cardio"><span class="accent">Cardio</span><br>driven finish.</h2>
+      <p>The next 20–30 minutes of class are cardio-driven. Your heart and lung capacity are challenged to new levels, so you get the most out of every workout. You keep moving through each interval, choosing your weights and taking a breather when you need one.</p>
+      <a class="btn btn--primary" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+  </section>
+
+  <!-- CENTERED BLOCK -->
+  <section class="center-block" aria-labelledby="m-diff">
+    <div class="wrap center-block__inner">
+      <p class="eyebrow">The Centric difference</p>
+      <h2 class="center-block__title" id="m-diff">Not just lifting.<br><span class="accent">Not random.</span></h2>
+      <p class="center-block__text">We’re not just weight lifting, and we’re not randomizing workouts. Centric Fitness Club values lifting weights and moving in many different ways, from the core out.</p>
+      <p class="center-block__label">We focus on</p>
+      <ul class="focus">
+        <li>Tempos</li>
+        <li>Mobility</li>
+        <li>Single-limb work</li>
+        <li>Explosive movements</li>
+        <li>Functional exercises</li>
+      </ul>
+      <p class="center-block__text">All of it builds strong bodies that move well in everyday life.</p>
+      <p class="center-block__note"><span class="confirm">CONFIRM: owner’s full science write-up coming soon</span></p>
+      <a class="btn btn--dark" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER (copy as-is to every page) ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cta">
+      <h2 class="footer__title">Leave <em>better.</em><br>Start this week.</h2>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217" loading="lazy">
+        <p class="footer__small">Coached strength, mobility and conditioning for every level.</p>
+      </div>
+      <div>
+        <p class="footer__head">Visit</p>
+        <p>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</p>
+        <p><a href="tel:+13105044265">(310) 504-4265</a></p>
+        <p><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></p>
+        <p>Mon–Fri 6 AM–7 PM<br>Sat 7 AM–12 PM · Sun closed</p>
+      </div>
+      <div>
+        <p class="footer__head">Follow</p>
+        <p><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">Instagram · @centricfitnessclub</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Centric Fitness Club</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile: pinned trial bar -->
+<div class="mobile-bar">
+  <a class="btn btn--primary btn--block" href="#book" data-book>Try 7 days for $10</a>
+</div>
+<!-- ============ /SHARED FOOTER ============ -->
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>
