@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Centric Fitness Club, Redondo Beach</title>
+  <meta name="description" content="Get in touch with Centric Fitness Club in Redondo Beach. Call, email or send us a message.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/gym-wide-view.jpg" imagesrcset="img/gym-wide-view-900.jpg 900w, img/gym-wide-view.jpg 1800w" imagesizes="100vw">
+  <link rel="stylesheet" href="css/styles.css?v=10">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ SHARED HEADER (copy as-is to every page; move aria-current to that page's link) ============ -->
+<!-- PROMO BAR: swap the text and link for the free week / New Year offer, or delete this <div> to turn it off. -->
+<div class="promo">
+  <p>Try Centric: 7 days of coached classes for $10. <a href="#book" data-book>Book now <span aria-hidden="true">→</span></a></p>
+</div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="index.html" aria-label="Centric Fitness Club home">
+      <img src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__pill">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="memberships.html">Memberships</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="#book" data-book>Sign up</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="memberships.html">Memberships</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="#book" data-book>Start your 7-day trial for $10</a>
+  </div>
+</header>
+<!-- ============ /SHARED HEADER ============ -->
+
+<main id="main">
+
+  <!-- CONTACT: photo background, text left, form card right -->
+  <section class="contact" aria-labelledby="c-title">
+    <img class="contact__bg" src="img/gym-wide-view.jpg" srcset="img/gym-wide-view-900.jpg 900w, img/gym-wide-view.jpg 1800w" sizes="100vw" width="1800" height="1350" alt="">
+    <div class="contact__shade" aria-hidden="true"></div>
+    <div class="wrap contact__inner">
+      <div class="contact__text">
+        <p class="eyebrow eyebrow--dark">Contact</p>
+        <h1 class="contact__title" id="c-title">Get in touch<br><span class="accent">with us.</span></h1>
+        <p class="contact__lead">We’ll get back to you as soon as we’re between classes.</p>
+        <p>Questions about classes, the trial or which membership fits? Wondering if you’re “fit enough” to start? (You are.) Send us a message, give us a call or stop by. We love talking to members and soon-to-be members.</p>
+        <ul class="contact__details">
+          <li><span>Call</span><a href="tel:+13105044265">(310) 504-4265</a></li>
+          <li><span>Email</span><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></li>
+          <li><span>Visit</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Centric+Fitness+Club,+2806+Phelan+Ln+Unit+B,+Redondo+Beach,+CA+90278" target="_blank" rel="noopener">2806 Phelan Ln, Unit B, Redondo Beach</a></li>
+          <li><span>Follow</span><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">@centricfitnessclub</a></li>
+        </ul>
+      </div>
+
+      <form class="contact__form" data-contact-form novalidate>
+        <label class="visually-hidden" for="c-name">Full name</label>
+        <input id="c-name" name="name" type="text" placeholder="Full name" autocomplete="name" required>
+        <label class="visually-hidden" for="c-email">Email address</label>
+        <input id="c-email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+        <label class="visually-hidden" for="c-subject">Subject</label>
+        <input id="c-subject" name="subject" type="text" placeholder="Subject">
+        <label class="visually-hidden" for="c-message">Message</label>
+        <textarea id="c-message" name="message" rows="6" placeholder="Tell us what’s on your mind" required></textarea>
+        <div class="contact__submit-row">
+          <span class="confirm confirm--dark">CONFIRM form service</span>
+          <button class="contact__submit" type="submit">Send message <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="contact__status" data-contact-status role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- TRIAL -->
+  <section class="center-block center-block--off" aria-labelledby="c-trial">
+    <div class="wrap center-block__inner">
+      <p class="eyebrow">New to Centric?</p>
+      <h2 class="center-block__title" id="c-trial">7 days.<br><span class="accent">$10.</span></h2>
+      <p class="center-block__text">Try every class for a week, meet your coach and get a form check. At the end of the week, pick the plan that fits.</p>
+      <div class="center-block__actions">
+        <a class="btn btn--dark" href="#book" data-book>Start your 7-day trial for $10</a>
+        <a class="link-arrow" href="memberships.html">See memberships <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER (copy as-is to every page) ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cta">
+      <h2 class="footer__title">Leave <em>better.</em><br>Start this week.</h2>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217" loading="lazy">
+        <p class="footer__small">Coached strength, mobility and conditioning for every level.</p>
+      </div>
+      <div>
+        <p class="footer__head">Visit</p>
+        <p>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</p>
+        <p><a href="tel:+13105044265">(310) 504-4265</a></p>
+        <p><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></p>
+        <p>Mon–Fri 6 AM–7 PM<br>Sat 7 AM–12 PM · Sun closed</p>
+      </div>
+      <div>
+        <p class="footer__head">Follow</p>
+        <p><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">Instagram · @centricfitnessclub</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Centric Fitness Club</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile: pinned trial bar -->
+<div class="mobile-bar">
+  <a class="btn btn--primary btn--block" href="#book" data-book>Try 7 days for $10</a>
+</div>
+<!-- ============ /SHARED FOOTER ============ -->
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>

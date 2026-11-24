@@ -123,3 +123,18 @@ if (revList) {
   window.addEventListener('resize', update);
   update();
 }
+
+// Contact form: placeholder until a form service is connected [CONFIRM]
+const contactForm = document.querySelector('[data-contact-form]');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const status = contactForm.querySelector('[data-contact-status]');
+    if (!contactForm.checkValidity()) {
+      status.textContent = 'Please add your name, a valid email and a message.';
+      return;
+    }
+    status.textContent = 'Thanks! This is a preview, so the message wasn’t sent yet. For now, email mail@centricfitnessclub.com.';
+    contactForm.reset();
+  });
+}
