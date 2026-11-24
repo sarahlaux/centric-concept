@@ -461,7 +461,7 @@ body.menu-open .mobile-bar { display: none; }
   .footer__grid > div:first-child { grid-column: 1 / -1; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   .nav, .header__cta { display: none; }
   .header__inner { grid-template-columns: 1fr auto; }
   .menu-btn { display: inline-flex; }
