@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Schedule | Centric Fitness Club, Redondo Beach</title>
+  <meta name="description" content="Weekly class times at Centric Fitness Club in Redondo Beach. Book your spot.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=10">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ SHARED HEADER (copy as-is to every page; move aria-current to that page's link) ============ -->
+<!-- PROMO BAR: swap the text and link for the free week / New Year offer, or delete this <div> to turn it off. -->
+<div class="promo">
+  <p>Try Centric: 7 days of coached classes for $10. <a href="#book" data-book>Book now <span aria-hidden="true">→</span></a></p>
+</div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="index.html" aria-label="Centric Fitness Club home">
+      <img src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__pill">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html" aria-current="page">Schedule</a></li>
+        <li><a href="index.html#pricing">Memberships</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="#book" data-book>Sign up</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html" aria-current="page">Schedule</a></li>
+        <li><a href="index.html#pricing">Memberships</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="#book" data-book>Start your 7-day trial for $10</a>
+  </div>
+</header>
+<!-- ============ /SHARED HEADER ============ -->
+
+<main id="main">
+
+  <!-- SCHEDULE HERO -->
+  <section class="m-hero m-hero--short" aria-labelledby="s-title">
+    <div class="m-hero__content">
+      <p class="eyebrow eyebrow--dark">Schedule</p>
+      <h1 class="m-hero__title" id="s-title">Class <span class="accent">schedule.</span></h1>
+      <p class="m-hero__sub">Every class is a full Centric session: strength first, then two intervals. Pick a time and book your spot.</p>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+  </section>
+
+  <!-- WEEK -->
+  <section class="section section--white sched" aria-labelledby="s-week">
+    <div class="wrap">
+      <div class="sched__bar">
+        <div>
+          <p class="eyebrow">This week</p>
+          <h2 class="sched__title" id="s-week">November 22–28, 2026</h2>
+        </div>
+        <ul class="sched__legend" aria-label="Legend">
+          <li><span class="dot"></span>Centric Class (1 hour)</li>
+          <li><span class="dot dot--event"></span>Special event</li>
+        </ul>
+      </div>
+      <p class="sched__mock"><span class="confirm">CONFIRM: mockup of the week of Nov 23 (Thanksgiving week). The live schedule will come from the booking system.</span></p>
+
+      <div class="week">
+        <section class="day" aria-label="Sun November 22">
+          <h3 class="day__head"><span>Sun</span><strong>22</strong></h3>
+          <ul class="day__list">
+            <li class="cls cls--none"><p>No classes</p></li>
+          </ul>
+        </section>
+        <section class="day" aria-label="Mon November 23">
+          <h3 class="day__head"><span>Mon</span><strong>23</strong></h3>
+          <ul class="day__list">
+            <li class="cls">
+              <p class="cls__time">6:00 – 7:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">7:00 – 8:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">12:00 – 1:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Sloan Boettcher</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">5:00 – 6:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Mike McGee</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </section>
+        <section class="day" aria-label="Tue November 24">
+          <h3 class="day__head"><span>Tue</span><strong>24</strong></h3>
+          <ul class="day__list">
+            <li class="cls">
+              <p class="cls__time">6:00 – 7:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Mike McGee</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">7:00 – 8:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Mike McGee</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">9:00 – 10:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Mike McGee</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">12:00 – 1:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">5:00 – 6:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Sloan Boettcher</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </section>
+        <section class="day" aria-label="Wed November 25">
+          <h3 class="day__head"><span>Wed</span><strong>25</strong></h3>
+          <ul class="day__list">
+            <li class="cls">
+              <p class="cls__time">6:00 – 7:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Kimberlee Guido</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">7:00 – 8:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Kimberlee Guido</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">12:00 – 1:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">5:00 – 6:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </section>
+        <section class="day" aria-label="Thu November 26">
+          <h3 class="day__head"><span>Thu</span><strong>26</strong></h3>
+          <ul class="day__list">
+            <li class="cls">
+              <p class="cls__time">8:00 – 9:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </section>
+        <section class="day" aria-label="Fri November 27">
+          <h3 class="day__head"><span>Fri</span><strong>27</strong></h3>
+          <ul class="day__list">
+            <li class="cls">
+              <p class="cls__time">9:00 – 10:00 AM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach"><span class="confirm confirm--dark">CONFIRM coach</span></p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="cls">
+              <p class="cls__time">12:00 – 1:00 PM</p>
+              <p class="cls__name">Centric Class</p>
+              <p class="cls__coach">Rachel Rieg</p>
+              <a class="cls__book" href="#book" data-book>Book <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </section>
+        <section class="day" aria-label="Sat November 28">
+          <h3 class="day__head"><span>Sat</span><strong>28</strong></h3>
+          <ul class="day__list">
+            <li class="cls cls--event">
+              <p class="cls__time">10:00 – 12:00 PM</p>
+              <p class="cls__name">CA Brewery Running S… <span class="confirm">CONFIRM event name</span></p>
+              <p class="cls__coach">Special event</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="sched__foot">
+        <div>
+          <p class="sched__foot-label">Gym hours</p>
+          <p>Mon–Fri 6 AM–7 PM · Sat 7 AM–12 PM · Sun closed</p>
+        </div>
+        <a class="btn btn--dark" href="index.html#pricing">See memberships <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER (copy as-is to every page) ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cta">
+      <h2 class="footer__title">Leave <em>better.</em><br>Start this week.</h2>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217" loading="lazy">
+        <p class="footer__small">Coached strength, mobility and conditioning for every level.</p>
+      </div>
+      <div>
+        <p class="footer__head">Visit</p>
+        <p>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</p>
+        <p><a href="tel:+13105044265">(310) 504-4265</a></p>
+        <p><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></p>
+        <p>Mon–Fri 6 AM–7 PM<br>Sat 7 AM–12 PM · Sun closed</p>
+      </div>
+      <div>
+        <p class="footer__head">Follow</p>
+        <p><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">Instagram · @centricfitnessclub</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Centric Fitness Club</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile: pinned trial bar -->
+<div class="mobile-bar">
+  <a class="btn btn--primary btn--block" href="#book" data-book>Try 7 days for $10</a>
+</div>
+<!-- ============ /SHARED FOOTER ============ -->
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>
