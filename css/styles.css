@@ -784,3 +784,13 @@ body.menu-open .mobile-bar { display: none; }
   .contact__inner { grid-template-columns: 1fr; }
   .contact__shade { background: rgba(17,17,17,.78); }
 }
+.contact__form select {
+  width: 100%; border: 0; outline: 0; appearance: none; -webkit-appearance: none;
+  background: var(--color-off-white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 20px center / 18px no-repeat;
+  color: var(--color-black); font: 500 16px var(--font-body);
+  border-radius: 999px; padding: 18px 52px 18px 22px; cursor: pointer;
+}
+.contact__form select:invalid, .contact__form select:has(option[value=""]:checked) { color: #6b6b6b; }
+.contact__form select:focus-visible { box-shadow: 0 0 0 3px var(--color-orange); }
+.contact__form textarea { min-height: 150px; margin-top: 0; }
+.contact__optnote { margin-top: -2px; }

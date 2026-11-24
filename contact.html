@@ -79,13 +79,34 @@
 
       <form class="contact__form" data-contact-form novalidate>
         <label class="visually-hidden" for="c-name">Full name</label>
-        <input id="c-name" name="name" type="text" placeholder="Full name" autocomplete="name" required>
-        <label class="visually-hidden" for="c-email">Email address</label>
-        <input id="c-email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
-        <label class="visually-hidden" for="c-subject">Subject</label>
-        <input id="c-subject" name="subject" type="text" placeholder="Subject">
-        <label class="visually-hidden" for="c-message">Message</label>
-        <textarea id="c-message" name="message" rows="6" placeholder="Tell us what’s on your mind" required></textarea>
+        <input id="c-name" name="name" type="text" placeholder="Full name" autocomplete="name">
+        <label class="visually-hidden" for="c-email">Email (required)</label>
+        <input id="c-email" name="email" type="email" placeholder="Email *" autocomplete="email" required>
+        <label class="visually-hidden" for="c-phone">Phone</label>
+        <input id="c-phone" name="phone" type="tel" placeholder="Phone" autocomplete="tel">
+        <label class="visually-hidden" for="c-heard">How did you hear about us?</label>
+        <select id="c-heard" name="heard">
+          <option value="" selected disabled>How did you hear about us?</option>
+          <option>Instagram</option>
+          <option>Google</option>
+          <option>ClassPass</option>
+          <option>A friend or member</option>
+          <option>Walked or drove by</option>
+          <option>Other</option>
+        </select>
+        <label class="visually-hidden" for="c-goal">What are your goals?</label>
+        <select id="c-goal" name="goal">
+          <option value="" selected disabled>What are your goals?</option>
+          <option>Get stronger</option>
+          <option>Improve my cardio and endurance</option>
+          <option>Move better and stay mobile</option>
+          <option>Lose weight</option>
+          <option>Stay consistent with a routine</option>
+          <option>Something else</option>
+        </select>
+        <label class="visually-hidden" for="c-message">Additional comments or questions</label>
+        <textarea id="c-message" name="message" rows="5" placeholder="Additional comments or questions"></textarea>
+        <p class="contact__optnote"><span class="confirm confirm--dark">CONFIRM dropdown options to match her current form</span></p>
         <div class="contact__submit-row">
           <span class="confirm confirm--dark">CONFIRM form service</span>
           <button class="contact__submit" type="submit">Send message <span aria-hidden="true">→</span></button>

@@ -131,7 +131,7 @@ if (contactForm) {
     e.preventDefault();
     const status = contactForm.querySelector('[data-contact-status]');
     if (!contactForm.checkValidity()) {
-      status.textContent = 'Please add your name, a valid email and a message.';
+      status.textContent = 'Please add a valid email so we can get back to you.';
       return;
     }
     status.textContent = 'Thanks! This is a preview, so the message wasn’t sent yet. For now, email mail@centricfitnessclub.com.';
