@@ -720,3 +720,4 @@ body.menu-open .mobile-bar { display: none; }
 .about-row__body p { font-size: clamp(17px, 1.4vw, 19px); line-height: 1.7; color: #3a3a3a; max-width: 56ch; }
 .about-row__body .btn { margin-top: 8px; }
 @media (max-width: 720px) { .about-row__inner { grid-template-columns: 1fr; gap: 8px; } .about-row__body { padding-top: 12px; } }
+.section--off .pricing__head { margin-bottom: 40px; }

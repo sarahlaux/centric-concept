@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memberships | Centric Fitness Club, Redondo Beach</title>
+  <meta name="description" content="Unlimited class memberships at Centric Fitness Club in Redondo Beach: month-to-month, 3-month and 1-year plans, plus a $10 7-day trial.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=10">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ SHARED HEADER (copy as-is to every page; move aria-current to that page's link) ============ -->
+<!-- PROMO BAR: swap the text and link for the free week / New Year offer, or delete this <div> to turn it off. -->
+<div class="promo">
+  <p>Try Centric: 7 days of coached classes for $10. <a href="#book" data-book>Book now <span aria-hidden="true">→</span></a></p>
+</div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="index.html" aria-label="Centric Fitness Club home">
+      <img src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__pill">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="memberships.html" aria-current="page">Memberships</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="#book" data-book>Sign up</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="memberships.html" aria-current="page">Memberships</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="#book" data-book>Start your 7-day trial for $10</a>
+  </div>
+</header>
+<!-- ============ /SHARED HEADER ============ -->
+
+<main id="main">
+
+  <section class="m-hero m-hero--short" aria-labelledby="p-title">
+    <div class="m-hero__content">
+      <p class="eyebrow eyebrow--dark">Memberships</p>
+      <h1 class="m-hero__title" id="p-title">Pick your <span class="accent">plan.</span></h1>
+      <p class="m-hero__sub">Every membership includes unlimited classes. Not sure yet? Start with 7 days for $10.</p>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+  </section>
+
+  <section class="section section--off" aria-labelledby="p-plans">
+    <div class="wrap">
+      <div class="pricing__head">
+        <h2 class="pricing__title" id="p-plans">Unlimited<br><span class="accent">classes.</span></h2>
+        <p>Same coached classes on every plan. The longer the commitment, the lower the monthly cost.</p>
+      </div>
+      <ul class="plans">
+        <li class="plan reveal">
+          <p class="plan__name">Month-to-month</p>
+          <p class="plan__price">$199<span>/month</span></p>
+          <p class="plan__note">Unlimited classes. Flexible month to month.</p>
+          <a class="btn btn--dark btn--block" href="#book" data-plan="monthly">Choose month-to-month</a>
+        </li>
+        <li class="plan reveal">
+          <p class="plan__name">3-month</p>
+          <p class="plan__price">$560<span>/3 months</span></p>
+          <p class="plan__note">Unlimited classes. Works out to about $187 a month.</p>
+          <a class="btn btn--dark btn--block" href="#book" data-plan="three-month">Choose 3-month</a>
+        </li>
+        <li class="plan plan--best reveal">
+          <p class="plan__tag">Best value</p>
+          <p class="plan__name">1-year</p>
+          <p class="plan__price">$2,150<span>/year</span></p>
+          <p class="plan__note">Unlimited classes. Works out to about $179 a month, saving $238 a year.</p>
+          <a class="btn btn--primary btn--block" href="#book" data-plan="annual">Choose 1-year</a>
+        </li>
+      </ul>
+      <p class="pricing__fine"><span class="confirm">CONFIRM plan booking links</span></p>
+    </div>
+  </section>
+
+  <section class="center-block" aria-labelledby="p-trial">
+    <div class="wrap center-block__inner">
+      <p class="eyebrow">New to Centric?</p>
+      <h2 class="center-block__title" id="p-trial">7 days.<br><span class="accent">$10.</span></h2>
+      <p class="center-block__text">Try every class for a week, meet your coach and get a form check. At the end of the week, pick the plan that fits.</p>
+      <div class="center-block__actions">
+        <a class="btn btn--dark" href="#book" data-book>Start your 7-day trial for $10</a>
+        <a class="link-arrow" href="schedule.html">See the class schedule <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER (copy as-is to every page) ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cta">
+      <h2 class="footer__title">Leave <em>better.</em><br>Start this week.</h2>
+      <a class="btn btn--primary btn--lg" href="#book" data-book>Start your 7-day trial for $10</a>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="img/logo-wordmark-white.png" alt="Centric Fitness Club" width="1200" height="217" loading="lazy">
+        <p class="footer__small">Coached strength, mobility and conditioning for every level.</p>
+      </div>
+      <div>
+        <p class="footer__head">Visit</p>
+        <p>2806 Phelan Ln, Unit B<br>Redondo Beach, CA 90278</p>
+        <p><a href="tel:+13105044265">(310) 504-4265</a></p>
+        <p><a href="mailto:mail@centricfitnessclub.com">mail@centricfitnessclub.com</a></p>
+        <p>Mon–Fri 6 AM–7 PM<br>Sat 7 AM–12 PM · Sun closed</p>
+      </div>
+      <div>
+        <p class="footer__head">Follow</p>
+        <p><a href="https://www.instagram.com/centricfitnessclub/" target="_blank" rel="noopener">Instagram · @centricfitnessclub</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Centric Fitness Club</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile: pinned trial bar -->
+<div class="mobile-bar">
+  <a class="btn btn--primary btn--block" href="#book" data-book>Try 7 days for $10</a>
+</div>
+<!-- ============ /SHARED FOOTER ============ -->
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>
