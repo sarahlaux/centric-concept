@@ -12,6 +12,18 @@ document.querySelectorAll('[data-book]').forEach((a) => {
   if (/^https?:/.test(BOOKING_URL)) { a.target = '_blank'; a.rel = 'noopener'; }
 });
 
+/* [CONFIRM] Paste each membership plan's booking link here. */
+const PLAN_URLS = {
+  monthly: '#book',
+  'three-month': '#book',
+  annual: '#book',
+};
+document.querySelectorAll('[data-plan]').forEach((a) => {
+  const url = PLAN_URLS[a.dataset.plan] || BOOKING_URL;
+  a.setAttribute('href', url);
+  if (/^https?:/.test(url)) { a.target = '_blank'; a.rel = 'noopener'; }
+});
+
 // Header shadow once the page scrolls
 const header = document.querySelector('[data-header]');
 const onScroll = () => header && header.classList.toggle('is-scrolled', window.scrollY > 8);

@@ -625,3 +625,28 @@ body.menu-open .mobile-bar { display: none; }
   .m-hero .btn--lg { min-height: 48px; padding: 12px 22px; font-size: 15px; }
   .split__panel .btn { width: 100%; }
 }
+
+/* Membership pricing (inside Get started) */
+.pricing { margin-top: clamp(56px, 7vw, 96px); padding-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--line-light); }
+.pricing__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 40px; flex-wrap: wrap; margin-bottom: 28px; }
+.pricing__title { font: 800 clamp(36px, 4vw, 56px)/.95 var(--font-display); font-stretch: 78%; text-transform: uppercase; }
+.pricing__head p { max-width: 44ch; color: var(--muted-light); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.plan {
+  position: relative; display: flex; flex-direction: column; gap: 10px;
+  background: var(--color-white); border: 1px solid var(--line-light); border-radius: var(--radius-sm);
+  padding: clamp(24px, 2.6vw, 32px);
+}
+.plan--best { border: 2px solid var(--color-orange); }
+.plan__tag {
+  position: absolute; top: -13px; left: 24px;
+  background: var(--color-orange); color: var(--color-black);
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 999px;
+}
+.plan__name { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--color-orange-deep); }
+.plan__price { font: 800 clamp(44px, 4.4vw, 60px)/1 var(--font-display); font-stretch: 80%; }
+.plan__price span { font: 500 15px var(--font-body); color: var(--muted-light); margin-left: 4px; }
+.plan__note { color: var(--muted-light); font-size: 15px; flex: 1; margin-bottom: 8px; }
+.pricing__fine { margin-top: 16px; }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; gap: 20px; } }
