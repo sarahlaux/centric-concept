@@ -808,7 +808,7 @@ body.menu-open .mobile-bar { display: none; }
   .contact__inner { grid-template-columns: 0.85fr 1.35fr; }
   .contact__form { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 12px; row-gap: 12px; align-content: start; }
   .contact__form > input { grid-column: span 2; }
-  .contact__form > select { grid-column: span 3; }
+  .contact__form > select { grid-column: 1 / -1; }
   .contact__form > textarea, .contact__form > .contact__optnote,
   .contact__form > .contact__submit-row, .contact__form > .contact__status { grid-column: 1 / -1; }
   .contact__form select { padding-left: 18px; padding-right: 44px; background-position: right 16px center; }
