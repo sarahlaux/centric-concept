@@ -101,27 +101,54 @@ document.querySelectorAll('.faq details').forEach((d) => {
   });
 });
 
-// Reviews: arrow buttons for the phone slider (two cards at a time)
+// Reviews: desktop/tablet show pages of 2 rows (6 or 4 cards); phones swipe two at a time
 const revList = document.querySelector('[data-reviews]');
 if (revList) {
   const prev = document.querySelector('[data-rev-prev]');
   const next = document.querySelector('[data-rev-next]');
   const count = document.querySelector('[data-rev-count]');
   const cards = [...revList.children];
-  const step = () => cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : revList.clientWidth;
-  const update = () => {
-    const first = Math.round(revList.scrollLeft / step());
-    const perView = Math.max(1, Math.round(revList.clientWidth / step()));
-    const last = Math.min(cards.length, first + perView);
+  const phone = window.matchMedia('(max-width: 720px)');
+  let pageIndex = 0;
+  const perPage = () => getComputedStyle(revList).gridTemplateColumns.split(' ').length * 2;
+
+  const renderPage = (animate) => {
+    const size = perPage();
+    const pages = Math.ceil(cards.length / size);
+    pageIndex = Math.min(Math.max(pageIndex, 0), pages - 1);
+    const start = pageIndex * size, end = Math.min(cards.length, start + size);
+    cards.forEach((c, i) => { c.hidden = i < start || i >= end; });
+    prev.disabled = pageIndex === 0;
+    next.disabled = pageIndex >= pages - 1;
+    count.textContent = `${start + 1}–${end} of ${cards.length}`;
+    if (animate) { revList.classList.remove('is-turning'); void revList.offsetWidth; revList.classList.add('is-turning'); }
+  };
+
+  const stepPhone = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : revList.clientWidth) * 2;
+  const updatePhone = () => {
+    const w = stepPhone() / 2;
+    const first = Math.round(revList.scrollLeft / w);
+    const last = Math.min(cards.length, first + 2);
     prev.disabled = revList.scrollLeft <= 2;
     next.disabled = revList.scrollLeft + revList.clientWidth >= revList.scrollWidth - 2;
     count.textContent = `${first + 1}–${last} of ${cards.length}`;
   };
-  prev.addEventListener('click', () => revList.scrollBy({ left: -step(), behavior: 'smooth' }));
-  next.addEventListener('click', () => revList.scrollBy({ left: step(), behavior: 'smooth' }));
-  revList.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
-  window.addEventListener('resize', update);
-  update();
+
+  const setMode = () => {
+    if (phone.matches) { cards.forEach((c) => { c.hidden = false; }); updatePhone(); }
+    else renderPage(false);
+  };
+  prev.addEventListener('click', () => {
+    if (phone.matches) revList.scrollBy({ left: -stepPhone(), behavior: 'smooth' });
+    else { pageIndex -= 1; renderPage(true); }
+  });
+  next.addEventListener('click', () => {
+    if (phone.matches) revList.scrollBy({ left: stepPhone(), behavior: 'smooth' });
+    else { pageIndex += 1; renderPage(true); }
+  });
+  revList.addEventListener('scroll', () => { if (phone.matches) requestAnimationFrame(updatePhone); }, { passive: true });
+  window.addEventListener('resize', setMode);
+  setMode();
 }
 
 // Contact form: placeholder until a form service is connected [CONFIRM]
