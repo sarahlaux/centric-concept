@@ -568,7 +568,7 @@ body.menu-open .mobile-bar { display: none; }
 
 .m-hero {
   position: relative; isolation: isolate; overflow: hidden;
-  min-height: clamp(520px, 78svh, 820px);
+  min-height: clamp(440px, 62svh, 680px);
   display: grid; place-items: center; text-align: center;
   padding: 96px var(--gutter);
   background: var(--color-black); color: var(--color-white);
@@ -619,7 +619,7 @@ body.menu-open .mobile-bar { display: none; }
   .split--flip .split__media { order: 0; }
 }
 @media (max-width: 720px) {
-  .m-hero { min-height: 72svh; padding-block: 72px; }
+  .m-hero { min-height: 0; padding-block: 88px; }
   .m-hero .btn--lg { min-height: 48px; padding: 12px 22px; font-size: 15px; }
   .split__panel .btn { width: 100%; }
 }
