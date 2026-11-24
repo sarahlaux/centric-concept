@@ -795,3 +795,11 @@ body.menu-open .mobile-bar { display: none; }
 .contact__form select:focus-visible { box-shadow: 0 0 0 3px var(--color-orange); }
 .contact__form textarea { min-height: 150px; margin-top: 0; }
 .contact__optnote { margin-top: -2px; }
+/* Contact heading spans the full width, edge to edge */
+.contact__head { container-type: inline-size; }
+.contact__title { font-size: 10.2cqi; white-space: nowrap; line-height: .9; }
+.contact__head .eyebrow { margin-bottom: 14px; }
+@media (max-width: 720px) {
+  .contact__title { font-size: 15.5cqi; white-space: normal; }
+  .contact__title .accent { display: block; }
+}
