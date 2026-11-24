@@ -537,7 +537,7 @@ body.menu-open .mobile-bar { display: none; }
   .map { min-height: 260px; }
   .faq__body p { padding-right: 0; }
 
-  .footer__cta .btn { width: 100%; }
+  .footer__cta .btn { width: auto; min-height: 48px; padding: 12px 22px; font-size: 15px; }
   .footer__grid { grid-template-columns: 1fr; gap: 28px; }
 
 }
