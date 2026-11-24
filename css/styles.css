@@ -721,3 +721,21 @@ body.menu-open .mobile-bar { display: none; }
 .about-row__body .btn { margin-top: 8px; }
 @media (max-width: 720px) { .about-row__inner { grid-template-columns: 1fr; gap: 8px; } .about-row__body { padding-top: 12px; } }
 .section--off .pricing__head { margin-bottom: 40px; }
+
+/* FAQ page */
+.faq-page { display: grid; gap: clamp(48px, 6vw, 80px); }
+.faq-group { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(24px, 5vw, 80px); align-items: start; }
+.faq-group__title { font: 800 clamp(28px, 3vw, 40px)/1 var(--font-display); font-stretch: 78%; text-transform: uppercase; position: sticky; top: calc(var(--header-h) + 24px); }
+.faq--light { border-top-color: var(--line-light); }
+.faq--light details { border-bottom-color: var(--line-light); }
+.faq--light summary { color: var(--color-black); }
+.faq--light summary:hover, .faq--light details[open] summary { color: var(--color-orange-deep); }
+.faq--light summary::after { border-color: var(--line-light); color: var(--color-orange-deep); }
+.faq--light details[open] summary::after { background: var(--color-orange); border-color: var(--color-orange); color: var(--color-black); }
+.faq--light .faq__body p { color: #3a3a3a; }
+.faq__body a, .center-block__text a { color: var(--color-orange-deep); font-weight: 600; text-underline-offset: 3px; }
+.center-block--off { background: var(--color-off-white); }
+@media (max-width: 720px) {
+  .faq-group { grid-template-columns: 1fr; gap: 12px; }
+  .faq-group__title { position: static; }
+}
